@@ -11,7 +11,7 @@ keywords = ["egg", "bacon", "sausage", "tomatoes", "Lobster Thermidor"]
 name = "TornAPIWrapper"
 readme = "README.md"
 requires-python = ">=3.8"
-version = "1.0.0"
+version = "1.0.1"
 
 [project.urls]
 Homepage = "https://github.com/cxdzc/TornAPIWrapper"
