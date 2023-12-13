@@ -8,7 +8,7 @@ setup(
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     name='TornAPIWrapper',
-    packages=find_packages(),
+    packages=find_packages(exclude=["Examples"]),
     url='https://github.com/cxdzc/TornAPIWrapper',
     version='v1.0.0',
 )
