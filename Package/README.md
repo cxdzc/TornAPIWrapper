@@ -5,7 +5,7 @@ A Python wrapper for the [Torn City API](https://www.torn.com/api.html), providi
 
 # 📠 Instructions
 1. Install the TornAPIWrapper package by typing `pip tornapiwrapper` in your CMD.
-2. Check out [examples](Examples) and [documentations](#-documentations) to familiarize yourself with the API.
+2. Check out [examples](../Examples) and [documentations](#-documentations) to familiarize yourself with the API.
 3. Create an [API key](https://www.torn.com/preferences.php#tab=api).
 4. Start programming!
 
@@ -30,7 +30,7 @@ Love open-source projects? Find the project helpful or fun? Support sustainabili
 > [!NOTE]
 > This is not legal advice.
 
-The content and software in this GitHub repository are licensed under the [MIT License](LICENSE). A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
+The content and software in this GitHub repository are licensed under the [MIT License](../LICENSE). A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
 <a rel="license" href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-ab1436"/></a>
 
