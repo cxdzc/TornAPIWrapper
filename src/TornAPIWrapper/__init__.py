@@ -1,7 +1,4 @@
 from .torn_api_wrapper import TornApiWrapper
 from .torn_api_error_handler import TornApiErrorHandler
 
-__all__ = [
-    "TornApiWrapper",
-    "TornApiErrorHandler",
-]
+__all__ = ["TornApiWrapper", "TornApiErrorHandler"]
