@@ -18,7 +18,7 @@ There are two Torn City API documentations that I recommend reading to understan
 
 # 💝 Contributors
 <a href="https://github.com/cxdzc/tornapiwrapper/graphs/contributors">
-  <img width="75" src="https://contrib.rocks/image?repo=cxdzc/tornapiwrapper" />
+  <img width="75" src="https://contrib.rocks/image?repo=cxdzc/tornapiwrapper"/>
 </a>
 
 # 💌 Support
