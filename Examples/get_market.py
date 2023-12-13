@@ -1,4 +1,4 @@
-from Package.torn_api_wrapper import TornApiWrapper
+from torn_api_wrapper import TornApiWrapper
 
 taw = TornApiWrapper(api_key="1aBcDeFgH2iJkLmN")  #Insert your API key
 
