@@ -17,11 +17,7 @@ There are two Torn City API documentations that I recommend reading to understan
 - **[Unofficial Torn API Docs](https://tornapi.tornplayground.eu):** This is the unofficial Torn City API documentation, that is well documented and has an active and open-source [repository](https://github.com/Torn-Playground/tornapi-documentation).
 
 # 💝 Contributors
-There are two Torn City API documentations that I recommend reading to understand how the API works.
 
-- **[Official Torn API Docs](https://www.torn.com/api.html):** This is the official Torn City API documentation, that is not properly documented. I only recommend this as it is official documentations.
-<br><br>
-- **[Unofficial Torn API Docs](https://tornapi.tornplayground.eu):** This is the unofficial Torn City API documentation, that is well documented and has an active and open-source [repository](https://github.com/Torn-Playground/tornapi-documentation).
 
 # 💌 Support
 Love open-source projects? Find the project helpful or fun? Support sustainability here, your contribution keeps innovation and fun alive.
