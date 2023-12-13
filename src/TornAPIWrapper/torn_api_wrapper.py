@@ -24,7 +24,7 @@ SOFTWARE.
 
 import requests
 from typing import Union, List, Dict
-from torn_api_error_handler import TornApiErrorHandler
+from .torn_api_error_handler import TornApiErrorHandler
 
 class TornApiWrapper:
     """
