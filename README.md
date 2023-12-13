@@ -32,7 +32,7 @@ Love open-source projects? Find the project helpful or fun? Support sustainabili
 
 The content and software in this GitHub repository are licensed under the [MIT License](https://github.com/cxdzc/TornAPIWrapper/blob/main/LICENSE). A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
-<a rel="license" href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-ab1436"/></a>
+<a rel="license" href="https://github.com/cxdzc/TornAPIWrapper/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-ab1436"/></a>
 
 # 🔗 Links
 These are links that may help with your programming.
