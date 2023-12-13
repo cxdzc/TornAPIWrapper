@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     author='cxdzc',
@@ -8,7 +8,6 @@ setup(
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     name='TornAPIWrapper',
-    py_modules=['torn_api_wrapper', 'torn_api_error_handler'],
     url='https://github.com/cxdzc/TornAPIWrapper',
     version='v1.0.0',
 )
