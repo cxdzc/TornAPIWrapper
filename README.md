@@ -5,11 +5,20 @@ A Python wrapper for the [Torn City API](https://www.torn.com/api.html), providi
 
 # 📄 Instructions
 1. Install the TornAPIWrapper package by typing `pip tornapiwrapper` in your CMD.
-2. Check out examples to familarize yourself with code (INPUT LINK HERE)
-4. Enjoy!
+2. Check out examples and documentation familiarize yourself with the API. (INPUT LINK HERE)
+3. Enjoy!
 
 # 📑 Documentations
-There are two Torn API documentations
+There are two Torn City API documentations that I recommend reading to understand how the API works.
+
+- **[Official Torn API Docs](https://www.torn.com/api.html):** This is the official Torn City API documentation, that is not properly documented. I only recommend this as it is official documentations.
+<br><br>
+- **[Unofficial Torn API Docs](https://tornapi.tornplayground.eu):** This is the unofficial Torn City API documentation, that is well documented and has an active and open-source [repository](https://github.com/Torn-Playground/tornapi-documentation).
+
+# 🔗 Links
+These are links that may help with your programming.
+
+- [List of Torn City item IDs](https://www.tornstats.com/items)
 
 # 📜 License
 > [!NOTE]
