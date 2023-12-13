@@ -24,7 +24,7 @@ There are two Torn City API documentations that I recommend reading to understan
 - **[Unofficial Torn API Docs](https://tornapi.tornplayground.eu):** This is the unofficial Torn City API documentation, that is well documented and has an active and open-source [repository](https://github.com/Torn-Playground/tornapi-documentation).
 
 # 💌 Donate
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="cxdzc" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+<a rel="license" href="https://www.buymeacoffee.com/cxdzc"><img width="545" alt="bmc-button" src="https://github.com/cxdzc/TornAPIWrapper/assets/110936008/494a782f-e327-4d07-8821-e962f03842e4"></a>
 
 # 📜 License
 > [!NOTE]
