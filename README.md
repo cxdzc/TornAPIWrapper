@@ -12,7 +12,7 @@ A Python wrapper for the [Torn City API](https://www.torn.com/api.html), providi
 # 📑 Documentations
 There are two Torn City API documentations that I recommend reading to understand how the API works.
 
-- **[Official Torn API Docs](https://www.torn.com/api.html):** This is the official Torn City API documentation, that is not properly documented. I only recommend this as it is official documentations.
+- **[Official Torn API Docs](https://www.torn.com/api.html):** This is the official Torn City API documentation, that is not properly documented. I only recommend this as it is official documentation.
 <br><br>
 - **[Unofficial Torn API Docs](https://tornapi.tornplayground.eu):** This is the unofficial Torn City API documentation, that is well documented and has an active and open-source [repository](https://github.com/Torn-Playground/tornapi-documentation).
 
