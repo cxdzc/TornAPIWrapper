@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+authors = [{name="cxdzc"}]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent", ]
+dependencies = ["requests"]
+description = "A Python wrapper for the Torn City API, providing access to Torn City data."
+keywords = ["egg", "bacon", "sausage", "tomatoes", "Lobster Thermidor"]
+name = "TornAPIWrapper"
+readme = "README.md"
+requires-python = ">=3.8"
+version = "1.0.0"
+
+[project.urls]
+Homepage = "https://github.com/cxdzc/TornAPIWrapper"
+Issues = "https://github.com/cxdzc/TornAPIWrapper/issues"
