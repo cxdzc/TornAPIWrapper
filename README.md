@@ -1,11 +1,11 @@
 ![Some Weird Image](https://github.com/cxdzc/TornAPIWrapper/assets/110936008/271aa9c8-280e-4fd9-be9e-cd8b88d53329)
 
-# 📦 TornAPIWrapper v1.0.0
+# 📦 TornAPIWrapper v1.0.2
 A Python wrapper for the [Torn City API](https://www.torn.com/api.html), providing access to [Torn City](https://www.torn.com) data.
 
 # 📠 Instructions
-1. Install the TornAPIWrapper package by typing `pip tornapiwrapper` in your CMD.
-2. Check out [examples](Examples) and [documentations](#-documentations) to familiarize yourself with the API.
+1. Install the [TornAPIWrapper](https://pypi.org/project/TornAPIWrapper) package by typing `pip install tornapiwrapper` in your CMD.
+2. Check out [examples](https://github.com/cxdzc/TornAPIWrapper/tree/main/Examples) and [documentations](https://github.com/cxdzc/TornAPIWrapper#-documentations) to familiarize yourself with the API.
 3. Create an [API key](https://www.torn.com/preferences.php#tab=api).
 4. Start programming!
 
@@ -30,7 +30,7 @@ Love open-source projects? Find the project helpful or fun? Support sustainabili
 > [!NOTE]
 > This is not legal advice.
 
-The content and software in this GitHub repository are licensed under the [MIT License](LICENSE). A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
+The content and software in this GitHub repository are licensed under the [MIT License](https://github.com/cxdzc/TornAPIWrapper/blob/main/LICENSE). A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
 <a rel="license" href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-ab1436"/></a>
 
