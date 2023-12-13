@@ -5,7 +5,7 @@ A Python wrapper for the [Torn City API](https://www.torn.com/api.html), providi
 
 # 📄 Instructions
 1. Install the TornAPIWrapper package by typing `pip tornapiwrapper` in your CMD.
-2. Check out [examples](Examples) and [documentation](#-documentations) to familiarize yourself with the API.
+2. Check out [examples](Examples) and [documentations](#-documentations) to familiarize yourself with the API.
 3. Create an [API key](https://www.torn.com/preferences.php#tab=api).
 4. Start programming!
 
