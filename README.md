@@ -24,7 +24,7 @@ There are two Torn City API documentations that I recommend reading to understan
 # 💌 Support
 Love open-source projects? Find the project helpful or fun? Support sustainability here, your contribution keeps innovation and fun alive.
 
-<a rel="license" href="https://www.buymeacoffee.com/cxdzc"><img width="75" alt="bmc-button" src="https://github.com/cxdzc/TornAPIWrapper/assets/110936008/494a782f-e327-4d07-8821-e962f03842e4"></a>
+<a rel="license" href="https://www.buymeacoffee.com/cxdzc"><img width="200" alt="bmc-button" src="https://github.com/cxdzc/TornAPIWrapper/assets/110936008/494a782f-e327-4d07-8821-e962f03842e4"></a>
 
 # 📜 License
 > [!NOTE]
