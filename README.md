@@ -28,7 +28,6 @@ Love open-source projects? Find them helpful or fun? Make a difference! Support 
 
 <a rel="license" href="https://www.buymeacoffee.com/cxdzc"><img width="200" alt="bmc-button" src="https://github.com/cxdzc/TornAPIWrapper/assets/110936008/494a782f-e327-4d07-8821-e962f03842e4"></a>
 
-
 # 📜 License
 > [!NOTE]
 > This is not legal advice.
