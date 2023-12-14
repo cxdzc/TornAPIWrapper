@@ -3,3 +3,6 @@ contact_links:
   - name: Question
     url: https://github.com/cxdzc/TornAPIWrapper/discussions
     about: Ask and answer questions here.
+  - name: Other
+    url: https://github.com/cxdzc/TornAPIWrapper/discussions
+    about: Chat, ideas, or polls.
