@@ -1,6 +1,6 @@
 ![Some Weird Image](https://github.com/cxdzc/TornAPIWrapper/assets/110936008/271aa9c8-280e-4fd9-be9e-cd8b88d53329)
 
-<center><a href="https://pypi.org/project/TornAPIWrapper/"><img width="75" src=https://img.shields.io/pypi/v/TornAPIWrapper.svg></a></center>
+<p align="center"><a href="https://pypi.org/project/TornAPIWrapper/"><img width="75" src=https://img.shields.io/pypi/v/TornAPIWrapper.svg></a></p>
 
 # 📦 TornAPIWrapper v1.0.2
 A Python wrapper for the [Torn City API](https://www.torn.com/api.html), providing access to [Torn City](https://www.torn.com) data.
