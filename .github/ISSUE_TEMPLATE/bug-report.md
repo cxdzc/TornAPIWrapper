@@ -1,6 +1,15 @@
 ---
 name: Bug Report
 about: Create a bug report to help imrpovement.
+title: "[BUG] Title..."
+labels: bug
+assignees: ''
+
+---
+
+---
+name: Bug Report
+about: Create a bug report to help imrpovement.
 title: "[BUG]"
 labels: bug
 assignees: ''
