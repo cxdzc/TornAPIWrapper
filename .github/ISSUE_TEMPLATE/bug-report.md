@@ -7,15 +7,6 @@ assignees: ''
 
 ---
 
----
-name: Bug Report
-about: Create a bug report to help imrpovement.
-title: "[BUG]"
-labels: bug
-assignees: ''
-
----
-
 **Describe the bug**<br>
 A clear and concise description of the bug.
 
