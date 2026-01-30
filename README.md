@@ -5,7 +5,7 @@
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/pyversions/TornAPIWrapper.svg></a>
 </p>
 
-# 📦 TornAPIWrapper `v2.0.0+27.01.2026`
+# 📦 TornAPIWrapper (v2.0.0+27.01.2026)
 A Python wrapper for the [Torn City API](https://www.torn.com/api.html), providing access to [Torn City](https://www.torn.com) data.
 
 # 📠 Instructions
