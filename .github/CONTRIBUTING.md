@@ -1,7 +1,7 @@
 ## Ways to Contribute
 
 - **Bug Reports**  
-  Report bugs using the [Bug Report template](/issues/new/choose).
+  Report bugs using the [Bug Report template](https://github.com/cxdzc/TornAPIWrapper/issues/new/choose).
 
 - **Code Contributions**  
   See the [Pull Request](#pull-request) section below.
