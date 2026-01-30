@@ -60,14 +60,14 @@ class TornAPIWrapper:
         self.session = requests.Session()
         self.session.headers.update({"Authorization": f"ApiKey {self.api_key}", "User-Agent": "TornAPIWrapper/2.0.0", "Accept": "application/json"})
 
-        self.user = User(self)
-        self.faction = Faction(self)
-        self.market = Market(self)
-        self.racing = Racing(self)
-        self.forum = Forum(self)
-        self.property = Property(self)
-        self.key = Key(self)
-        self.torn = Torn(self)
+        self.user : User = User(self)
+        self.faction : Faction = Faction(self)
+        self.market : Market = Market(self)
+        self.forum : Forum = Forum(self)
+        self.racing : Racing = Racing(self)
+        self.property : Property = Property(self)
+        self.key : Key = Key(self)
+        self.torn : Torn = Torn(self)
 
     @staticmethod
     def build_local_params(method_request: Callable, local_vars: dict) -> dict | None:
