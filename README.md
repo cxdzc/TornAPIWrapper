@@ -1,11 +1,11 @@
-![Some Weird Image](https://github.com/cxdzc/TornAPIWrapper/assets/110936008/271aa9c8-280e-4fd9-be9e-cd8b88d53329)
+![Banner](https://github.com/cxdzc/TornAPIWrapper/assets/110936008/271aa9c8-280e-4fd9-be9e-cd8b88d53329)
 
 <p align="center">
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/v/TornAPIWrapper.svg></a>
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/pyversions/TornAPIWrapper.svg></a>
 </p>
 
-# 📦 TornAPIWrapper v2.0.0+27.01.2026
+# 📦 TornAPIWrapper `v2.0.0+27.01.2026`
 A Python wrapper for the [Torn City API](https://www.torn.com/api.html), providing access to [Torn City](https://www.torn.com) data.
 
 # 📠 Instructions
@@ -17,7 +17,7 @@ A Python wrapper for the [Torn City API](https://www.torn.com/api.html), providi
 # 📑 Documentations
 There are two Torn City API documentations that I recommend reading to understand how the API works.
 
-- **[Official Torn API Docs](https://www.torn.com/api.html):** This is the official Torn City API documentation, that is not properly documented. I only recommend this as it is official documentation.
+- **[Official Torn API Docs](https://www.torn.com/api.html):** This is the official Torn City API documentation for v2.
 <br><br>
 - **[Unofficial Torn API Docs](https://tornapi.tornplayground.eu):** This is the unofficial Torn City API documentation, that is well documented and has an active and open-source [repository](https://github.com/Torn-Playground/tornapi-documentation).
 
