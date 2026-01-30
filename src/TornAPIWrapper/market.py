@@ -26,10 +26,10 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from type_hints import SortOptions, MrktBazaarCatOptions, MrktItemBonusOptions
+from .type_hints import SortOptions, MrktBazaarCatOptions, MrktItemBonusOptions
 
 if TYPE_CHECKING:
-    from torn_api_wrapper import TornAPIWrapper
+    from .torn_api_wrapper import TornAPIWrapper
 
 class Market:
     def __init__(self, api: TornAPIWrapper):
@@ -47,10 +47,10 @@ class Market:
     def get_itemmarket(self, item_id: int, bonus: MrktItemBonusOptions = None, limit: int = 20, offset: int = 0, timestamp: int = None, comment: str = None):
         return self.api.request("/market/itemmarket", self.api.build_params(self.get_itemmarket, locals()))
 
-    def get_properties(self, property_type_id: int, limit: int = 20, offset: int = 0,  sort: SortOptions = None, timestamp: int = None, comment: str = None):
+    def get_properties(self, property_type_id: int, limit: int = 20, offset: int = 0, sort: SortOptions = None, timestamp: int = None, comment: str = None):
         return self.api.request("/market/properties", self.api.build_params(self.get_properties, locals()))
 
-    def get_rentals(self, property_type_id: int, limit: int = 20, offset: int = 0,  sort: SortOptions = None, timestamp: int = None, comment: str = None):
+    def get_rentals(self, property_type_id: int, limit: int = 20, offset: int = 0, sort: SortOptions = None, timestamp: int = None, comment: str = None):
         return self.api.request("/market/rentals", self.api.build_params(self.get_rentals, locals()))
 
     def get_lookup(self, timestamp: int = None, comment: str = None):

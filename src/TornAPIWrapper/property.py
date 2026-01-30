@@ -27,7 +27,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from torn_api_wrapper import TornAPIWrapper
+    from .torn_api_wrapper import TornAPIWrapper
 
 class Property:
     def __init__(self, api: TornAPIWrapper):

@@ -27,17 +27,16 @@ from typing import Callable
 
 import requests
 
-from errors import TornAPIErrorHandler
-from faction import Faction
-from forum import Forum
-from key import Key
-from market import Market
-from property import Property
-from racing import Racing
-from torn import Torn
-from user import User
+from .errors import TornAPIErrorHandler
+from .faction import Faction
+from .forum import Forum
+from .key import Key
+from .market import Market
+from .property import Property
+from .racing import Racing
+from .torn import Torn
+from .user import User
 
-#VERSION 2.0.0+27.01.2026
 
 class TornAPIWrapper:
     BASE_URL = "https://api.torn.com/v2"

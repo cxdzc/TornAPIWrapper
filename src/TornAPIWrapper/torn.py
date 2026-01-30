@@ -26,10 +26,10 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from type_hints import SortOptions, TornFactionHofCatOptions, TornHofCatOptions, TornItemsCatOptions
+from .type_hints import SortOptions, TornFactionHofCatOptions, TornHofCatOptions, TornItemsCatOptions
 
 if TYPE_CHECKING:
-    from torn_api_wrapper import TornAPIWrapper
+    from .torn_api_wrapper import TornAPIWrapper
 
 class Torn:
     def __init__(self, api: TornAPIWrapper):
@@ -101,7 +101,7 @@ class Torn:
     def get_subcrimes(self, crime_id: int, timestamp: int = None, comment: str = None):
         return self.api.request("/torn/subcrimes", self.api.build_params(self.get_subcrimes, locals()))
 
-    def get_territory(self, territory_ids: list[str] = None, limit: int = 20, offset: int = 0, timestamp: int = None, comment: str = None): #
+    def get_territory(self, territory_ids: list[str] = None, limit: int = 20, offset: int = 0, timestamp: int = None, comment: str = None):
         return self.api.request("/torn/territory", self.api.build_params(self.get_territory, locals()))
 
     def get_lookup(self, timestamp: int = None, comment: str = None):

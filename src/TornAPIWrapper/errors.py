@@ -32,7 +32,7 @@ class WrapperError(Exception):
 class UnhandledAPIError(WrapperError):
     """
     An API error code was received that is not yet implemented by TornAPIWrapper.
-    Please open an issue at https://github.com/cxdzc/TornAPIWrapper/issues or
+    Please open an issue at https://github.com/cxdzc/TornAPIWrapper/issues/new/choose or
     contact AfricanChild [3157295], including details on how you encountered this error.
     """
     pass
@@ -313,6 +313,6 @@ class TornAPIErrorHandler:
     def raise_code(self, error_code: int):
         error = self.api_error_codes.get(error_code)
         if error is None:
-            raise UnhandledAPIError("An API error code was received that is not yet implemented by TornAPIWrapper.\nPlease open an issue at https://github.com/cxdzc/TornAPIWrapper/issues or contact AfricanChild [3157295], including details on how you encountered this error.")
+            raise UnhandledAPIError("An API error code was received that is not yet implemented by TornAPIWrapper.\nPlease open an issue at https://github.com/cxdzc/TornAPIWrapper/issues/new/choose or contact AfricanChild [3157295], including details on how you encountered this error.")
         api_error_class, message = error
         raise api_error_class(message=message, code=error_code)
