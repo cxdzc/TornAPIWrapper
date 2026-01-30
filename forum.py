@@ -44,7 +44,7 @@ class Forum:
     def get_thread(self, thread_id: int, timestamp: int = None, comment: str = None):
         return self.api.request("/forum/thread", self.api.build_params(self.get_thread, locals()))
 
-    def get_threads(self, category_id: list[int] = None, limit : int = 100, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None):
+    def get_threads(self, category_ids: list[int] = None, limit : int = 100, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None):
         return self.api.request("/forum/threads", self.api.build_params(self.get_threads, locals()))
 
     def get_lookup(self, timestamp: int = None, comment: str = None):

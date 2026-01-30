@@ -1,15 +1,16 @@
 ![Banner](https://github.com/cxdzc/TornAPIWrapper/assets/110936008/271aa9c8-280e-4fd9-be9e-cd8b88d53329)
 
-<p align="center">
+<div align="center">
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/v/TornAPIWrapper.svg></a>
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/pyversions/TornAPIWrapper.svg></a>
-</p>
+<a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/badge/patch-27.01.2026-blue></a>
+</div>
 
-# 📦 TornAPIWrapper - v2.0.0+27.01.2026
-A Python wrapper for the [Torn City API](https://www.torn.com/api.html), providing access to [Torn City](https://www.torn.com) data.
+# 📦 TornAPIWrapper
+A Python wrapper for the [Torn City API v2](https://www.torn.com/swagger.php), providing access to [Torn City](https://www.torn.com) data.
 
 # 📠 Instructions
-1. Install the [TornAPIWrapper](https://pypi.org/project/TornAPIWrapper) package by typing `pip install tornapiwrapper` in your CMD.
+1. Install the [TornAPIWrapper](https://pypi.org/project/TornAPIWrapper) package by typing `pip install tornapiwrapper` in your terminal.
 2. Check out [examples](https://github.com/cxdzc/TornAPIWrapper/tree/main/Examples) and [documentations](https://github.com/cxdzc/TornAPIWrapper#-documentations) to familiarize yourself with the API.
 3. Create an [API key](https://www.torn.com/preferences.php#tab=api).
 4. Start programming!
