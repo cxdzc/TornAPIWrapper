@@ -53,7 +53,7 @@ class TornAPIWrapper:
     param_group = {"from": param_from, "target": param_target, "name": param_name, "stat": param_stat, "log": param_log, "ids": param_ids, "filters": param_filters, "id": param_id, "cat": param_cat}
     parameter_map = {key: group for group, keys in param_group.items() for key in keys}
 
-    api_error_handler = TornAPIErrorHandler()
+    api_error_handler : TornAPIErrorHandler = TornAPIErrorHandler()
 
     def __init__(self, api_key: str):
         self.api_key = api_key
