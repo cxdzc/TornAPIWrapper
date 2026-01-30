@@ -19,7 +19,7 @@ A Python wrapper for the [Torn City API v2](https://www.torn.com/swagger.php), p
 # 📑 Documentations
 There are two Torn City API documentations that I recommend reading to understand how the Torn API and TornAPIWrapper work.
 
-- **[Official Torn API Docs v2:](https://www.torn.com/swagger.php)** Used by this project - best for endpoints, parameters, and response schemas.
+- **[Official Torn API Docs v2:](https://www.torn.com/swagger.php)** Used by this project - best for endpoints, parameters, response schemas, and searching what to call and request.
 - **[Official Torn API Docs v1:](https://www.torn.com/api.html)** Useful reference - explains API keys, access levels, limits, error codes, and ToS details not covered in v2.
 
 # 💝 Contributors
