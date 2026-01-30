@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions
+    url: https://github.com/cxdzc/TornAPIWrapper/discussions
+    about: Ask questions or get help here.
+  - name: Community
+    url: https://github.com/cxdzc/TornAPIWrapper/discussions
+    about: General discussion, ideas, or feedback.

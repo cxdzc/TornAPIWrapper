@@ -4,6 +4,7 @@
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/v/TornAPIWrapper.svg></a>
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/pyversions/TornAPIWrapper.svg></a>
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/badge/patch-27.01.2026-blue></a>
+<a rel="license" href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-ab1436"/></a>
 </div>
 
 # 📦 TornAPIWrapper
@@ -11,34 +12,26 @@ A Python wrapper for the [Torn City API v2](https://www.torn.com/swagger.php), p
 
 # 📠 Instructions
 1. Install the [TornAPIWrapper](https://pypi.org/project/TornAPIWrapper) package by typing `pip install tornapiwrapper` in your terminal.
-2. Check out [examples](https://github.com/cxdzc/TornAPIWrapper/tree/main/Examples) and [documentations](https://github.com/cxdzc/TornAPIWrapper#-documentations) to familiarize yourself with the API.
+2. Check out [examples](Examples) and [documentations](#-documentations) to familiarize yourself with the API.
 3. Create an [API key](https://www.torn.com/preferences.php#tab=api).
 4. Start programming!
 
 # 📑 Documentations
-There are two Torn City API documentations that I recommend reading to understand how the API works.
+There are two Torn City API documentations that I recommend reading to understand how the Torn API and TornAPIWrapper work.
 
-- **[Official Torn API Docs](https://www.torn.com/api.html):** This is the official Torn City API documentation for v2.
-<br><br>
-- **[Unofficial Torn API Docs](https://tornapi.tornplayground.eu):** This is the unofficial Torn City API documentation, that is well documented and has an active and open-source [repository](https://github.com/Torn-Playground/tornapi-documentation).
+- **[Official Torn API Docs v2:](https://www.torn.com/swagger.php)** Used by this project - best for endpoints, parameters, and response schemas.
+- **[Official Torn API Docs v1:](https://www.torn.com/api.html)** Useful reference - explains API keys, access levels, limits, error codes, and ToS details not covered in v2.
 
 # 💝 Contributors
-<a href="https://github.com/cxdzc/tornapiwrapper/graphs/contributors">
-  <img width="75" src="https://contrib.rocks/image?repo=cxdzc/tornapiwrapper"/>
+<a href="https://github.com/cxdzc/TornAPIWrapper/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=cxdzc/TornAPIWrapper" />
 </a>
 <br><br>
 
-View [CONTRIBUTING.md](https://github.com/cxdzc/TornAPIWrapper/blob/main/.github/CONTRIBUTING.md) to contribute.
+View [CONTRIBUTING.md](.github/CONTRIBUTING.md) to contribute.
 
 # 📜 License
 > [!NOTE]
 > This is not legal advice.
 
-The content and software in this GitHub repository are licensed under the [MIT License](https://github.com/cxdzc/TornAPIWrapper/blob/main/LICENSE). A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
-
-<a rel="license" href="https://github.com/cxdzc/TornAPIWrapper/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-ab1436"/></a>
-
-# 🔗 Links
-These are links that may help with your programming.
-
-- [List of Torn City item IDs](https://www.tornstats.com/items)
+The content and software in this repository are licensed under the [MIT License](LICENSE), a simple and permissive license that allows use, modification, and distribution as long as the license notice is preserved.
