@@ -1,3 +1,4 @@
+from . import errors
 from .errors import *
 from .torn_api_wrapper import TornAPIWrapper
 
