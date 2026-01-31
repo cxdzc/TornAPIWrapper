@@ -57,4 +57,12 @@ class Racing:
         return self.api.request("/racing/lookup", self.api.build_params(self.get_lookup, locals()))
 
     def get_timestamp(self, timestamp: int = None, comment: str = None):
+        """
+        Get current server time.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :param key: API key (Public).
+        :return: API response data.
+        :rtype: dict
+        """
         return self.api.request("/racing/timestamp", self.api.build_params(self.get_timestamp, locals()))
