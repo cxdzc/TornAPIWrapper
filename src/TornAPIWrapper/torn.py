@@ -32,6 +32,9 @@ if TYPE_CHECKING:
     from .torn_api_wrapper import TornAPIWrapper
 
 class Torn:
+    """
+    Torn API endpoints.
+    """
     def __init__(self, api: TornAPIWrapper):
         self.api = api
 
