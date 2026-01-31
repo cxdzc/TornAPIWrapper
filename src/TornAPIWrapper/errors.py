@@ -277,6 +277,9 @@ class InvalidInteractionLogCategory(APIError):
     pass
 
 class TornAPIErrorHandler:
+    """
+    Handle Torn API error codes and raise appropriate exceptions.
+    """
     api_error_codes = {
         0: (UnknownError, "Unknown error - Unhandled error, should not occur."),
         1: (EmptyKey, "Key is empty - Private key is empty in current request."),
@@ -311,6 +314,13 @@ class TornAPIErrorHandler:
     }
 
     def raise_code(self, error_code: int):
+        """
+        Raise an exception based on a Torn API error code.
+        :param error_code: API error code returned by Torn.
+        :raises UnhandledAPIError: If the error code is not implemented.
+        :raises TornAPIError: If the error code is recognized.
+        :rtype: None
+        """
         error = self.api_error_codes.get(error_code)
         if error is None:
             raise UnhandledAPIError("An API error code was received that is not yet implemented by TornAPIWrapper.\nPlease open an issue at https://github.com/cxdzc/TornAPIWrapper/issues/new/choose or contact AfricanChild [3157295], including details on how you encountered this error.")

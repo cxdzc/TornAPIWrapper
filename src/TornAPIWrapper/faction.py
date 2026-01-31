@@ -287,10 +287,10 @@ class Faction:
         Get the raids history for your faction or a specific faction.
         API key (Public).
         :param faction_id: Faction id.
-        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
-        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
-        :param sort: Sorted by the greatest timestamps.
         :param limit: Number of results to return.
+        :param sort: Sorted by the greatest timestamps.
+        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -305,8 +305,8 @@ class Faction:
         API key (Public).
         Use offset to get older results which are always ordered descending.
         :param faction_id: Faction id.
-        :param offset: Number of rows to skip before returning results.
         :param limit: Number of results to return.
+        :param offset: Number of rows to skip before returning results.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -349,11 +349,11 @@ class Faction:
         Requires faction API access permissions.
         API key (Limited).
         :param attack_filters: It's possible to use this query parameter to only get incoming or outgoing attacks / revives. If not specified, this selection will return both incoming and outgoing attacks / revives. It's also possible to combine this with 'idFilter'. This filter allows using from/to to filter by ids instead of timestamps.
+        :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
         :param limit: Number of results to return.
         :param sort: Sorted by the greatest timestamps.
         :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
         :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
-        :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -367,11 +367,11 @@ class Faction:
         Requires faction API access permissions.
         API key (Limited).
         :param attack_filters: It's possible to use this query parameter to only get incoming or outgoing attacks / revives. If not specified, this selection will return both incoming and outgoing attacks / revives. It's also possible to combine this with 'idFilter'. This filter allows using from/to to filter by ids instead of timestamps.
+        :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
         :param limit: Number of results to return.
         :param sort: Sorted by the greatest timestamps.
         :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
         :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
-        :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -437,10 +437,10 @@ class Faction:
         Get the territory wars history for your faction or a specific faction.
         API key (Public).
         :param faction_id: Faction id.
-        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
-        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
-        :param sort: Sorted by the greatest timestamps.
         :param limit: Number of results to return.
+        :param sort: Sorted by the greatest timestamps.
+        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -448,7 +448,7 @@ class Faction:
         """
         return self.api.request("/faction/territorywars", self.api.build_params(self.get_territorywars, locals()))
 
-    def get_territorywarreport(self, territory_war_id: int, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
+    def get_territorywarreport(self, territory_war_id: int, timestamp: int = None, comment: str = None) -> dict:
         """
         Get territory war details.
         API key (Public).
@@ -477,11 +477,11 @@ class Faction:
         Get faction warfare.
         API key (Public).
         The response depends on the selected category.
-        :param warfare_category:
+        :param warfare_category: Warefare categories.
         :param limit: Number of results to return.
         :param sort: Sorted by the greatest timestamps.
-        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
