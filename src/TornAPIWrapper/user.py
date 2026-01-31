@@ -228,8 +228,8 @@ class User:
         API key (Limited).
         :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
         :param limit: Number of results to return.
-        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -282,8 +282,8 @@ class User:
         :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
         :param limit: Number of results to return.
         :param sort: Sorted by the greatest timestamps.
-        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -312,8 +312,8 @@ class User:
         :param user_id: User id or user discord id.
         :param limit: Number of results to return.
         :param sort: Sorted by the greatest timestamps.
-        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -466,9 +466,9 @@ class User:
         Get your messages.
         API key (Limited).
         :param limit: Number of results to return.
-        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
-        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
         :param sort: Sorted by the greatest timestamps.
+        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -587,8 +587,8 @@ class User:
         Specific Player - Extended responses are available when requesting the data with Limited or higher access keys for yourself or your spouse.
         :param user_id: User id or user discord id.
         :param property_filters: It's possible to use this query parameter to filter properties by the key owner or their spouse.
-        :param offset: Number of rows to skip before returning results.
         :param limit: Number of results to return.
+        :param offset: Number of rows to skip before returning results.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -615,8 +615,8 @@ class User:
         :param race_category: Category of races returned.
         :param limit: Number of results to return.
         :param sort: Sorted by the greatest timestamps.
-        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -667,11 +667,11 @@ class User:
         Get your detailed revives.
         API key (Limited).
         :param attack_filters: It's possible to use this query parameter to only get incoming or outgoing attacks / revives. If not specified, this selection will return both incoming and outgoing attacks / revives. It's also possible to combine this with 'idFilter'. This filter allows using from/to to filter by ids instead of timestamps.
+        :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
         :param limit: Number of results to return.
         :param sort: Sorted by the greatest timestamps.
         :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
         :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
-        :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -684,11 +684,11 @@ class User:
         Get your simplified revives.
         API key (Limited).
         :param attack_filters: It's possible to use this query parameter to only get incoming or outgoing attacks / revives. If not specified, this selection will return both incoming and outgoing attacks / revives. It's also possible to combine this with 'idFilter'. This filter allows using from/to to filter by ids instead of timestamps.
+        :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
         :param limit: Number of results to return.
         :param sort: Sorted by the greatest timestamps.
         :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
         :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
-        :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
