@@ -173,7 +173,7 @@ class User:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request(f"/user/crimes", self.api.build_params(self.get_crimes, locals()))
+        return self.api.request("/user/crimes", self.api.build_params(self.get_crimes, locals()))
 
     def get_discord(self, user_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -185,7 +185,7 @@ class User:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request(f"/user/discord", self.api.build_params(self.get_discord, locals()))
+        return self.api.request("/user/discord", self.api.build_params(self.get_discord, locals()))
 
     def get_education(self, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -247,7 +247,7 @@ class User:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request(f"/user/faction", self.api.build_params(self.get_faction, locals()))
+        return self.api.request("/user/faction", self.api.build_params(self.get_faction, locals()))
 
     def get_forumfeed(self, timestamp: int = None, comment: str = None) -> dict:
         """
