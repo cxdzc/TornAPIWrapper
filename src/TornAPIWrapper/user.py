@@ -117,7 +117,7 @@ class User:
 
     def get_bounties(self, user_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
-        Get bounties placed on you or a specific user.
+        Get bounties placed on you or for a specific user.
         API key (Public).
         :param user_id: User id or user discord id.
         :param timestamp: Timestamp to bypass cache.
@@ -545,7 +545,7 @@ class User:
 
     def get_personalstats(self, user_id: int = None, stat_category: UserPrsnlStatsCatOptions = None, stat_keys: list[UserPrsnlStatsStatOptions] = None, timestamp: int = None, comment: str = None) -> dict:
         """
-        Get your personal stats or a specific user.
+        Get your personal stats or for a specific user.
         API key (Public).
          - UserPersonalStatsFull is returned only when this selection is requested with Limited, Full or Custom key access key.
          - UserPersonalStatsFullPublic is returned when the requested category is 'all'.
