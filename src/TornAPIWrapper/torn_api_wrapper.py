@@ -37,8 +37,10 @@ from .racing import Racing
 from .torn import Torn
 from .user import User
 
-
 class TornAPIWrapper:
+    """
+    A Python wrapper for the Torn City API, providing access to Torn City data.
+    """
     BASE_URL = "https://api.torn.com/v2"
 
     param_from = {"from_"}
@@ -55,8 +57,9 @@ class TornAPIWrapper:
 
     api_error_handler : TornAPIErrorHandler = TornAPIErrorHandler()
 
-    def __init__(self, api_key: str):
+    def __init__(self, api_key: str, request_timeout: float | tuple[float, float] = 10):
         self.api_key = api_key
+        self.request_timeout = request_timeout
         self.session = requests.Session()
         self.session.headers.update({"Authorization": f"ApiKey {self.api_key}", "User-Agent": "TornAPIWrapper/2.0.0", "Accept": "application/json"})
 
@@ -76,17 +79,22 @@ class TornAPIWrapper:
         :param method_request: The `TornAPIWrapper` method.
         :param local_vars: A dictionary containing the `method_request` scope's local variables.
         :return: A sterilized dictionary for further processing or None.
+        :rtype: dict | None
         """
-        return {param: local_vars[param] for param in inspect.signature(method_request).parameters if local_vars.get(param) is not None and param != "self"} or None
+        return {param: local_vars[param] for param in inspect.signature(method_request).parameters if local_vars[param] is not None and param != "self"} or None
 
     def build_params(self, method_request: Callable, local_vars: dict) -> dict | None:
-        # TODO: Validate parameter value e.g. if is not apart of the options raise, and raise error if its invalid
+        """
+        Builds Torn API compatible query parameters from wrapper method arguments.
+        :param method_request: The `TornAPIWrapper` method.
+        :param local_vars: A dictionary containing the `method_request` scope's local variables.
+        :return: A formatted dictionary of API query parameters | None.
+        :rtype: dict | None
+        """
         local_params = self.build_local_params(method_request, local_vars)
         if local_params is None:
             return None
         api_params = {}
-        print(f"local param: {local_params}")
-        print(f"api param: {api_params}")
         for param, value in local_params.items():
             if isinstance(value, list) and value: #Format `array[string]` or `array[int]` query for the API e.g. `get_attacks()`.
                 value = ",".join(map(str, value))
@@ -98,16 +106,22 @@ class TornAPIWrapper:
             api_params[api_param_var] = value
         return api_params or None
 
-    def request(self, endpoint: str, params: dict | None):
-        print("sent request now...")
-        api_request = self.session.get(url=f"{self.BASE_URL}{endpoint}", params=params)
+    def request(self, endpoint: str, params: dict | None) -> dict:
+        """
+        Sends a request to the Torn API and returns the JSON response.
+        :param endpoint: Torn API endpoint path.
+        :param params: Query parameters to include in the request.
+        :return: API response data.
+        :rtype: dict
+        """
+        api_request = self.session.get(url=f"{self.BASE_URL}{endpoint}", params=params, timeout=self.request_timeout)
         api_request.raise_for_status()
+        api_request_json = api_request.json()
+        api_request_error = api_request_json.get("error")
         print(f"Params: {params}")
         print(f"Endpoint: {endpoint}")
         print(f"{api_request.url}?&key=REDACTED")
-        api_request_error = api_request.json().get("error")
         if api_request_error:
-            print("ERROR", api_request_error)
+            print("Error:", api_request_error)
             self.api_error_handler.raise_code(api_request_error["code"])
-        return api_request.json()
-        # return self.session.get(url=f"{self.BASE_URL}{endpoint}", params=params).json()
+        return api_request_json
