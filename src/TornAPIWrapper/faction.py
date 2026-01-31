@@ -233,7 +233,7 @@ class Faction:
         Get your faction's news details.
         Requires faction API access permissions.
         API key (Minimal).
-        It is possible to pass up to 10 categories at the time. Categories 'attack', 'depositFunds' and 'giveFunds' are only available with 'Custom', 'Limited' or 'Full' access keys.
+        It is possible to pass up to 10 categories at the time.
         :param news_category: News category type.
         :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
         :param limit: Number of results to return.
