@@ -113,7 +113,7 @@ class Faction:
         """
         Get your faction's current chain or a specific faction.
         API key (Public).
-        :param id: Faction id.
+        :param faction_id: Faction id.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -143,7 +143,7 @@ class Faction:
         API key (Public).
         This includes currently ongoing chains.
         Specifc Faction - Chain reports for ongoing chains are available only for your own faction.
-        :param chainId: Chain id.
+        :param chain_id: Chain id.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -179,9 +179,9 @@ class Faction:
         :param crimes_category: Category of organized crimes returned. Category 'available' includes both 'recruiting' & 'planning', and category 'completed' includes both 'successful' & 'failure'.
         :param crimes_filter: It's possible to set this parameter to specify a field used for the sort, from & to query parameters. If not specified, the field will default to the category sorting as described above.
         :param offset: Number of rows to skip before returning results.
-        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
-        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
         :param sort: Sorted by the greatest timestamps.
+        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -193,7 +193,7 @@ class Faction:
         """
         Get a specific organized crime.
         API key (Minimal).
-        :param crimeId: Crime id.
+        :param crime_id: Crime id.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -205,7 +205,7 @@ class Faction:
         """
         Get the hall of fame rankings for your faction or a specific faction.
         API key (Public).
-        :param id: Faction id.
+        :param faction_id: Faction id.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -219,7 +219,7 @@ class Faction:
         API key (Public).
         The 'revive_setting' value will be populated (not Unknown) if you have faction permissions (with custom, limited or full access keys), otherwise it will be set as 'Unknown'.
         Specific Faction - The 'revive_setting' value will be populated (not Unknown) if you're requesting data for your own faction and have faction permissions (with custom, limited or full access keys), otherwise it will be set as 'Unknown'.
-        :param id: Faction id.
+        :param faction_id: Faction id.
         :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
@@ -233,7 +233,7 @@ class Faction:
         Get your faction's news details.
         Requires faction API access permissions.
         API key (Minimal).
-        It is possible to pass up to 10 categories at the time (comma separated). Categories 'attack', 'depositFunds' and 'giveFunds' are only available with 'Custom', 'Limited' or 'Full' access keys.
+        It is possible to pass up to 10 categories at the time. Categories 'attack', 'depositFunds' and 'giveFunds' are only available with 'Custom', 'Limited' or 'Full' access keys.
         :param news_category: News category type.
         :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
         :param limit: Number of results to return.
@@ -286,7 +286,7 @@ class Faction:
         """
         Get the raids history for your faction or a specific faction.
         API key (Public).
-        :param id: Faction id.
+        :param faction_id: Faction id.
         :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
         :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
         :param sort: Sorted by the greatest timestamps.
@@ -304,7 +304,7 @@ class Faction:
         Requires faction API access permissions.
         API key (Public).
         Use offset to get older results which are always ordered descending.
-        :param id: Faction id.
+        :param faction_id: Faction id.
         :param offset: Number of rows to skip before returning results.
         :param limit: Number of results to return.
         :param timestamp: Timestamp to bypass cache.
@@ -384,6 +384,7 @@ class Faction:
         Search factions by name or other criteria.
         API key (Public).
         This selection is standalone and cannot be used together with other selections.
+        :param faction_name: Name to search for.
         :param filters: A filtering query parameter allowing a comma-separated list of filters.
         :param limit: Number of results to return.
         :param offset: Number of rows to skip before returning results.
@@ -397,6 +398,7 @@ class Faction:
     def get_stats(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your faction's challenges stats.
+        Requires faction API access permissions.
         API key (Minimal).
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
@@ -409,7 +411,7 @@ class Faction:
         """
         Get a list of territories for your faction or a specific faction.
         API key (Public).
-        :param id: Faction id.
+        :param faction_id: Faction id.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -421,8 +423,8 @@ class Faction:
         """
         Get a list territory ownership.
         API key (Public).
-        :param offset: Number of rows to skip before returning results.
         :param limit: Number of results to return.
+        :param offset: Number of rows to skip before returning results.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -431,21 +433,83 @@ class Faction:
         return self.api.request("/faction/territoryownership", self.api.build_params(self.get_territoryownership, locals()))
 
     def get_territorywars(self, faction_id: int = None, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get the territory wars history for your faction or a specific faction.
+        API key (Public).
+        :param faction_id: Faction id.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
+        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param sort: Sorted by the greatest timestamps.
+        :param limit: Number of results to return.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
         return self.api.request("/faction/territorywars", self.api.build_params(self.get_territorywars, locals()))
 
     def get_territorywarreport(self, territory_war_id: int, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get territory war details.
+        API key (Public).
+        :param territory_war_id: Territory war id.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
         return self.api.request("/faction/territorywarreport", self.api.build_params(self.get_territorywarreport, locals()))
 
     def get_upgrades(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get your faction's upgrades.
+        Requires faction API access permissions.
+        API key (Minimal).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
         return self.api.request("/faction/upgrades", self.api.build_params(self.get_upgrades, locals()))
 
     def get_warfare(self, warfare_category: FacWarfareCatOptions, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get faction warfare.
+        API key (Public).
+        The response depends on the selected category.
+        :param warfare_category:
+        :param limit: Number of results to return.
+        :param sort: Sorted by the greatest timestamps.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
+        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
         return self.api.request("/faction/warfare", self.api.build_params(self.get_warfare, locals()))
 
     def get_wars(self, faction_id: int = None, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get the wars and pacts details for your faction or a specific faction.
+        API key (Public).
+        :param faction_id: Faction id.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
         return self.api.request("/faction/wars", self.api.build_params(self.get_wars, locals()))
 
     def get_lookup(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get all available faction selections.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
         return self.api.request("/faction/lookup", self.api.build_params(self.get_lookup, locals()))
 
     def get_timestamp(self, timestamp: int = None, comment: str = None) -> dict:
