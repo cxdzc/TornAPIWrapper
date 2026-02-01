@@ -4,7 +4,7 @@
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/badge/version-v2.0.1-blue></a>
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/pyversions/TornAPIWrapper></a>
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/badge/patch-27.01.2026-blue></a>
-<a rel="license" href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-ab1436"/></a>
+<a rel="license" href="https://github.com/cxdzc/TornAPIWrapper/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-ab1436"/></a>
 </div>
 
 # 📦 TornAPIWrapper
