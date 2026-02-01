@@ -1,12 +1,12 @@
 name: Bug Report
-description: Report a bug or incorrect behavior in the wrapper
+description: Report a bug or incorrect behavior in TornAPIWrapper
 labels: bug
 body:
   - type: markdown
     attributes:
       value: >
         Thanks for reporting a bug!
-        Please make sure this is an issue with the wrapper itself and not the external API.
+        Please make sure this is an issue with TornAPIWrapper itself and not the external API.
 
   - type: input
     attributes:
@@ -19,13 +19,17 @@ body:
     attributes:
       label: Reproduction Steps
       description: Steps to reproduce the issue
+      placeholder: |
+        1.
+        2.
+        3.
     validations:
       required: true
 
   - type: textarea
     attributes:
       label: Minimal Code Example
-      description: A short code snippet that demonstrates the bug
+      description: A short snippet that reproduces the issue
       render: python
 
   - type: textarea
@@ -38,21 +42,20 @@ body:
   - type: textarea
     attributes:
       label: Actual Behavior
-      description: What actually happened
+      description: What actually happened (include full traceback if applicable)
     validations:
       required: true
 
-  - type: input
+  - type: textarea
     attributes:
-      label: Wrapper Version
-      description: Version of the wrapper you are using
-    validations:
-      required: true
-
-  - type: input
-    attributes:
-      label: Python Version
-      description: Output of `python --version`
+      label: Version Info
+      description: Paste the full output of `python -m TornAPIWrapper -v`
+      render: shell
+      placeholder: |
+        - Python v...
+        - TornAPIWrapper v...
+        - requests v...
+        - system info: ...
     validations:
       required: true
 
@@ -62,7 +65,7 @@ body:
       options:
         - label: I have searched for existing issues
           required: true
-        - label: I am using the latest version of the wrapper
+        - label: I am using the latest version of TornAPIWrapper
           required: true
         - label: I have removed any sensitive information (API keys, tokens, etc.)
           required: true
