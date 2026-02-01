@@ -24,6 +24,7 @@ license = { file = "LICENSE" }
 name = "TornAPIWrapper"
 readme = "README.md"
 requires-python = ">=3.13"
+dynamic = ["version"]
 
 [tool.setuptools.dynamic]
 version = {attr = "tornapiwrapper.__version__"}
