@@ -8,7 +8,7 @@ body:
         > Thank you for reporting a bug!<br>
         Please make sure this is an issue with TornAPIWrapper itself and not the external API.
 
-  - type: input
+  - type: textarea
     attributes:
       label: Summary
       description: Briefly describe the bug
@@ -19,10 +19,6 @@ body:
     attributes:
       label: Reproduction Steps
       description: Steps to reproduce the issue
-      placeholder: |
-        1.
-        2.
-        3.
     validations:
       required: true
 
@@ -54,6 +50,7 @@ body:
       placeholder: |
         - Python v...
         - TornAPIWrapper v...
+        - Patch v...
         - requests v...
         - system info: ...
     validations:
@@ -67,7 +64,7 @@ body:
           required: true
         - label: I am using the latest version of TornAPIWrapper
           required: true
-        - label: I have removed any sensitive information (API keys, tokens, etc.)
+        - label: I have removed any sensitive information (API keys etc.)
           required: true
 
   - type: textarea
