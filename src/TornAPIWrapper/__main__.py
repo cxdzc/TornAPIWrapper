@@ -22,16 +22,16 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 """
 
-import argparse
-import importlib.metadata
-import platform
 import sys
+import platform
+import importlib.metadata
+import argparse
 
-from . import __version__
+from . import __version__, __patch__
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(prog="TornAPIWrapper")
+    parser = argparse.ArgumentParser(prog="TornAPIWrapper", allow_abbrev=False)
     parser.add_argument("-v", "--version", action="store_true")
     args = parser.parse_args()
 
@@ -41,10 +41,10 @@ def main() -> None:
     v = sys.version_info
     print(f"- Python v{v.major}.{v.minor}.{v.micro}-{v.releaselevel}")
     print(f"- TornAPIWrapper v{__version__}")
+    print(f"- Patch v{__patch__}")
     print(f"- requests v{importlib.metadata.version('requests')}")
     u = platform.uname()
     print(f"- system info: {u.system} {u.release} {u.version}")
-
 
 if __name__ == "__main__":
     main()

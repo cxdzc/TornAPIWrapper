@@ -22,11 +22,12 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 """
 
-__title__ = "discord"
 __author__ = "cxdzc"
-__license__ = "MIT"
 __copyright__ = "Copyright 2023-Present cxdzc"
+__license__ = "MIT"
+__title__ = "TornAPIWrapper"
 __version__ = "2.0.0"
+__patch__ = "27.01.2026"
 
 from .errors import (
     WrapperError,
