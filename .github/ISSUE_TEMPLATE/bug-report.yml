@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: >
-        Thank you for reporting a bug!\n
+        Thank you for reporting a bug!<br>
         Please make sure this is an issue with TornAPIWrapper itself and not the external API.
 
   - type: input
