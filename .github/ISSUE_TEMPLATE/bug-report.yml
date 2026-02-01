@@ -6,7 +6,7 @@ body:
     attributes:
       value: >
         > Thank you for reporting a bug!<br>
-        > Please make sure this is an issue with TornAPIWrapper itself and not the external API.
+        Please make sure this is an issue with TornAPIWrapper itself and not the external API.
 
   - type: input
     attributes:
