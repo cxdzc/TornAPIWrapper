@@ -4,7 +4,7 @@ labels: bug
 body:
   - type: markdown
     attributes:
-      value: >
+      description: >
         Thank you for reporting a bug!<br>
         Please make sure this is an issue with TornAPIWrapper itself and not the external API.
 
