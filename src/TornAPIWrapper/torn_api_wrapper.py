@@ -118,10 +118,6 @@ class TornAPIWrapper:
         api_request.raise_for_status()
         api_request_json = api_request.json()
         api_request_error = api_request_json.get("error")
-        print(f"Params: {params}")
-        print(f"Endpoint: {endpoint}")
-        print(f"{api_request.url}?&key=REDACTED")
         if api_request_error:
-            print("Error:", api_request_error)
             self.api_error_handler.raise_code(api_request_error["code"])
         return api_request_json
