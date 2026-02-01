@@ -29,7 +29,6 @@ import argparse
 
 from . import __version__, __patch__
 
-
 def main() -> None:
     parser = argparse.ArgumentParser(prog="TornAPIWrapper", allow_abbrev=False)
     parser.add_argument("-v", "--version", action="store_true")
