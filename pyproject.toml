@@ -19,12 +19,12 @@ classifiers = [
 ]
 dependencies = ["requests"]
 description = "A Python wrapper for the Torn City API, providing access to Torn City data."
+dynamic = ["version"]
 keywords = ["torn", "torn-city", "torn-city-api", "torncom", "wrapper", "api", "python"]
 license = { file = "LICENSE" }
 name = "TornAPIWrapper"
 readme = "README.md"
 requires-python = ">=3.13"
-dynamic = ["version"]
 
 [tool.setuptools.dynamic]
 version = {attr = "tornapiwrapper.__version__"}
