@@ -4,7 +4,7 @@
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/badge/version-v2.0.1-blue></a>
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/pyversions/TornAPIWrapper></a>
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/badge/patch-27.01.2026-blue></a>
-<a rel="license" href="https://github.com/cxdzc/TornAPIWrapper/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-ab1436"/></a>
+<a rel="license" href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-ab1436"/></a>
 </div>
 
 # 📦 TornAPIWrapper
@@ -12,7 +12,7 @@ A Python wrapper for the [Torn City API v2](https://www.torn.com/swagger.php), p
 
 # 📠 Instructions
 1. Install the [TornAPIWrapper](https://pypi.org/project/TornAPIWrapper) package by typing `pip install tornapiwrapper` in your terminal.
-2. Check out [examples](Examples) and [documentations](#-documentations) to familiarize yourself with the API.
+2. Check out [examples](https://github.com/cxdzc/TornAPIWrapper/tree/main/Examples) and [documentations](https://github.com/cxdzc/TornAPIWrapper?tab=readme-ov-file#-documentations) to familiarize yourself with the API.
 3. Create an [API key](https://www.torn.com/preferences.php#tab=api).
 4. Start programming!
 
@@ -28,10 +28,10 @@ There are two Torn City API documentations that I recommend reading to understan
 </a>
 <br><br>
 
-View [CONTRIBUTING.md](.github/CONTRIBUTING.md) to contribute.
+View [CONTRIBUTING.md](https://github.com/cxdzc/TornAPIWrapper?tab=contributing-ov-file) to contribute.
 
 # 📜 License
 > [!NOTE]
 > This is not legal advice.
 
-The content and software in this repository are licensed under the [MIT License](LICENSE), a simple and permissive license that allows use, modification, and distribution as long as the license notice is preserved.
+The content and software in this repository are licensed under the [MIT License](https://github.com/cxdzc/TornAPIWrapper?tab=MIT-1-ov-file), a simple and permissive license that allows use, modification, and distribution as long as the license notice is preserved.
