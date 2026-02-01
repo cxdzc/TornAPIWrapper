@@ -8,7 +8,7 @@ body:
         > Thank you for reporting a bug!<br>
         Please make sure this is an issue with TornAPIWrapper itself and not the external API.
 
-  - type: textarea
+  - type: input
     attributes:
       label: Summary
       description: Briefly describe the bug
