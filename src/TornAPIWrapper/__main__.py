@@ -22,12 +22,13 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 """
 
-import sys
-import platform
-import importlib.metadata
 import argparse
+import importlib.metadata
+import platform
+import sys
 
 from . import __version__, __patch__
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(prog="TornAPIWrapper", allow_abbrev=False)
