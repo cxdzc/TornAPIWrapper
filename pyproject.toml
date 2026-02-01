@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+authors = [{name="cxdzc"}]
+classifiers = [
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.15",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+
+  "Topic :: Internet",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Utilities",
+  "Natural Language :: English"
+]
+dependencies = ["requests"]
+description = "A Python wrapper for the Torn City API, providing access to Torn City data."
+keywords = ["torn", "torn-city", "torn-city-api", "torncom", "wrapper", "api", "python"]
+license = {file = "LICENSE"}
+name = "TornAPIWrapper"
+readme = "README.md"
+requires-python = ">=3.13"
+dynamic = ["version"]
+
+[tool.setuptools.dynamic]
+version = {attr = "tornapiwrapper.__version__"}
+
+[project.urls]
+Homepage = "https://github.com/cxdzc/TornAPIWrapper"
+Repository = "https://github.com/cxdzc/TornAPIWrapper"
+Issues = "https://github.com/cxdzc/TornAPIWrapper/issues"
