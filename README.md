@@ -16,7 +16,7 @@ A Python wrapper for the [Torn City API v2](https://www.torn.com/swagger.php), p
 * Modern, Pythonic API wrapper.
 
 
-# 📖 Instructions
+# 💾 Instructions
 1. Install the [TornAPIWrapper](https://pypi.org/project/TornAPIWrapper) package by typing `pip install tornapiwrapper` in your terminal.
 2. Check out [examples](https://github.com/cxdzc/TornAPIWrapper/tree/main/Examples) and [documentations](https://github.com/cxdzc/TornAPIWrapper?tab=readme-ov-file#-documentations) to familiarize yourself with the API.
 3. Create an [API key](https://www.torn.com/preferences.php#tab=api).
