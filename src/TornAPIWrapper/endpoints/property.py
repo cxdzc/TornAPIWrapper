@@ -27,37 +27,46 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from .torn_api_wrapper import TornAPIWrapper
+    from ..torn_api_wrapper import TornAPIWrapper
 
-class Key:
+class Property:
     """
-    Key API endpoints.
+    Property API endpoints.
     """
 
     def __init__(self, api: TornAPIWrapper):
         self.api = api
 
-    def get_log(self, limit: int = 100, offset: int = None, timestamp: int = None, comment: str = None) -> dict:
+    def get_property(self, property_id: int, timestamp: int = None, comment: str = None):
         """
-        Get current key log history.
+        Get a specific property.
         API key (Public).
-        This selection contains up to last 250 request logs.
-        :param limit: Number of results to return.
-        :param offset: Number of rows to skip before returning results.
+        :param property_id: Property id.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/key/log", self.api.build_params(self.get_log, locals()))
+        return self.api.request("/property/property", self.api.build_params(self.get_property, locals()))
 
-    def get_info(self, timestamp: int = None, comment: str = None) -> dict:
+    def get_lookup(self, timestamp: int = None, comment: str = None):
         """
-        Get current key info.
+        Get all available property selections.
         API key (Public).
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/key/info", self.api.build_params(self.get_info, locals()))
+        return self.api.request("/property/lookup", self.api.build_params(self.get_lookup, locals()))
+
+    def get_timestamp(self, timestamp: int = None, comment: str = None):
+        """
+        Get current server time.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/property/timestamp", self.api.build_params(self.get_timestamp, locals()))

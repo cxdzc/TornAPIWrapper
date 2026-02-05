@@ -26,10 +26,10 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from .type_hints import SortOptions, RaceCatOptions, RaceCarCatOptions
+from ..type_hints import SortOptions, RaceCatOptions, RaceCarCatOptions
 
 if TYPE_CHECKING:
-    from .torn_api_wrapper import TornAPIWrapper
+    from ..torn_api_wrapper import TornAPIWrapper
 
 class Racing:
     """

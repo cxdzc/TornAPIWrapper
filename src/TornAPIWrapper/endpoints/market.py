@@ -26,10 +26,10 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from .type_hints import SortOptions, MrktBazaarCatOptions, MrktItemBonusOptions
+from ..type_hints import SortOptions, MrktBazaarCatOptions, MrktItemBonusOptions
 
 if TYPE_CHECKING:
-    from .torn_api_wrapper import TornAPIWrapper
+    from ..torn_api_wrapper import TornAPIWrapper
 
 class Market:
     """

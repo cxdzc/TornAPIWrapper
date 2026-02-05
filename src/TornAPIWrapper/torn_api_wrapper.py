@@ -27,15 +27,15 @@ from typing import Callable
 
 import requests
 
+from .endpoints.faction import Faction
+from .endpoints.forum import Forum
+from .endpoints.key import Key
+from .endpoints.market import Market
+from .endpoints.property import Property
+from .endpoints.racing import Racing
+from .endpoints.torn import Torn
+from .endpoints.user import User
 from .errors import TornAPIErrorHandler
-from .faction import Faction
-from .forum import Forum
-from .key import Key
-from .market import Market
-from .property import Property
-from .racing import Racing
-from .torn import Torn
-from .user import User
 
 class TornAPIWrapper:
     """

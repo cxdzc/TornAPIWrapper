@@ -26,10 +26,10 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from .type_hints import SortOptions, TornFactionHofCatOptions, TornHofCatOptions, TornItemsCatOptions
+from ..type_hints import SortOptions, TornFactionHofCatOptions, TornHofCatOptions, TornItemsCatOptions
 
 if TYPE_CHECKING:
-    from .torn_api_wrapper import TornAPIWrapper
+    from ..torn_api_wrapper import TornAPIWrapper
 
 class Torn:
     """

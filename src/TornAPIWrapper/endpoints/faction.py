@@ -26,11 +26,11 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from .type_hints import SortOptions, FacCatScopeOptions, AttackFiltersOptions, FacContributorsStatOptions, \
+from ..type_hints import SortOptions, FacCatScopeOptions, AttackFiltersOptions, FacContributorsStatOptions, \
     FacCrimesCatOptions, FacCrimesFiltersOptions, FacNewsCatOptions, ReportCatOptions, FacWarfareCatOptions
 
 if TYPE_CHECKING:
-    from .torn_api_wrapper import TornAPIWrapper
+    from ..torn_api_wrapper import TornAPIWrapper
 
 class Faction:
     """
