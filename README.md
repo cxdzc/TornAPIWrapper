@@ -7,10 +7,16 @@
 <a rel="license" href="https://github.com/cxdzc/TornAPIWrapper/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-ab1436"/></a>
 </div>
 
-# 📦 TornAPIWrapper
+# 🌃 TornAPIWrapper
 A Python wrapper for the [Torn City API v2](https://www.torn.com/swagger.php), providing access to [Torn City](https://www.torn.com) data.
 
-# 📠 Instructions
+### ✨ Features
+* Sync and async support.
+* Built-in API error handling.
+* Modern, Pythonic API wrapper.
+
+
+# 📋 Instructions
 1. Install the [TornAPIWrapper](https://pypi.org/project/TornAPIWrapper) package by typing `pip install tornapiwrapper` in your terminal.
 2. Check out [examples](https://github.com/cxdzc/TornAPIWrapper/tree/main/Examples) and [documentations](https://github.com/cxdzc/TornAPIWrapper?tab=readme-ov-file#-documentations) to familiarize yourself with the API.
 3. Create an [API key](https://www.torn.com/preferences.php#tab=api).
