@@ -26,6 +26,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from ..params.builders import build_params
 from ..type_hints import SortOptions
 
 if TYPE_CHECKING:
@@ -48,7 +49,7 @@ class Forum:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/forum/categories", self.api.build_params(self.get_categories, locals()))
+        return self.api.request("/forum/categories", build_params(self.get_categories, locals()))
 
     def get_posts(self, thread_id: int, striptags: bool = True, offset: int = None, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None):
         """
@@ -67,7 +68,7 @@ class Forum:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/forum/posts", self.api.build_params(self.get_posts, locals()))
+        return self.api.request("/forum/posts", build_params(self.get_posts, locals()))
 
     def get_thread(self, thread_id: int, timestamp: int = None, comment: str = None):
         """
@@ -80,9 +81,9 @@ class Forum:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/forum/thread", self.api.build_params(self.get_thread, locals()))
+        return self.api.request("/forum/thread", build_params(self.get_thread, locals()))
 
-    def get_threads(self, category_ids: list[int] = None, limit : int = 100, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None):
+    def get_threads(self, category_ids: list[int] = None, limit: int = 100, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None):
         """
         Get threads across all forum categories or for specific public forum category or categories.
         API key (Public).
@@ -96,7 +97,7 @@ class Forum:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/forum/threads", self.api.build_params(self.get_threads, locals()))
+        return self.api.request("/forum/threads", build_params(self.get_threads, locals()))
 
     def get_lookup(self, timestamp: int = None, comment: str = None):
         """
@@ -107,7 +108,7 @@ class Forum:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/forum/lookup", self.api.build_params(self.get_lookup, locals()))
+        return self.api.request("/forum/lookup", build_params(self.get_lookup, locals()))
 
     def get_timestamp(self, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -118,4 +119,4 @@ class Forum:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/forum/timestamp", self.api.build_params(self.get_timestamp, locals()))
+        return self.api.request("/forum/timestamp", build_params(self.get_timestamp, locals()))

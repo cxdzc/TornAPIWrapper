@@ -26,6 +26,8 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from ..params.builders import build_params
+
 if TYPE_CHECKING:
     from ..torn_api_wrapper import TornAPIWrapper
 
@@ -49,7 +51,7 @@ class Key:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/key/log", self.api.build_params(self.get_log, locals()))
+        return self.api.request("/key/log", build_params(self.get_log, locals()))
 
     def get_info(self, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -60,4 +62,4 @@ class Key:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/key/info", self.api.build_params(self.get_info, locals()))
+        return self.api.request("/key/info", build_params(self.get_info, locals()))

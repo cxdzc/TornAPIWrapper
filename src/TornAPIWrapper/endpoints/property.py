@@ -26,6 +26,8 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from ..params.builders import build_params
+
 if TYPE_CHECKING:
     from ..torn_api_wrapper import TornAPIWrapper
 
@@ -47,7 +49,7 @@ class Property:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/property/property", self.api.build_params(self.get_property, locals()))
+        return self.api.request("/property/property", build_params(self.get_property, locals()))
 
     def get_lookup(self, timestamp: int = None, comment: str = None):
         """
@@ -58,7 +60,7 @@ class Property:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/property/lookup", self.api.build_params(self.get_lookup, locals()))
+        return self.api.request("/property/lookup", build_params(self.get_lookup, locals()))
 
     def get_timestamp(self, timestamp: int = None, comment: str = None):
         """
@@ -69,4 +71,4 @@ class Property:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/property/timestamp", self.api.build_params(self.get_timestamp, locals()))
+        return self.api.request("/property/timestamp", build_params(self.get_timestamp, locals()))

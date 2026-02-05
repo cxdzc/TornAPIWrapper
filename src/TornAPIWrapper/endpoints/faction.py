@@ -26,6 +26,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from ..params.builders import build_params
 from ..type_hints import SortOptions, FacCatScopeOptions, AttackFiltersOptions, FacContributorsStatOptions, \
     FacCrimesCatOptions, FacCrimesFiltersOptions, FacNewsCatOptions, ReportCatOptions, FacWarfareCatOptions
 
@@ -50,7 +51,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/applications", self.api.build_params(self.get_applications, locals()))
+        return self.api.request("/faction/applications", build_params(self.get_applications, locals()))
 
     def get_attacks(self, attack_filters: list[AttackFiltersOptions] = None, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -67,7 +68,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/attacks", self.api.build_params(self.get_attacks, locals()))
+        return self.api.request("/faction/attacks", build_params(self.get_attacks, locals()))
 
     def get_attacksfull(self, attack_filters: list[AttackFiltersOptions] = None, limit: int = 1000, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -84,7 +85,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/attacksfull", self.api.build_params(self.get_attacksfull, locals()))
+        return self.api.request("/faction/attacksfull", build_params(self.get_attacksfull, locals()))
 
     def get_balance(self, balance_category: FacCatScopeOptions = "current", timestamp: int = None, comment: str = None) -> dict:
         """
@@ -97,7 +98,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/balance", self.api.build_params(self.get_balance, locals()))
+        return self.api.request("/faction/balance", build_params(self.get_balance, locals()))
 
     def get_basic(self, faction_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -111,7 +112,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/basic", self.api.build_params(self.get_basic, locals()))
+        return self.api.request("/faction/basic", build_params(self.get_basic, locals()))
 
     def get_chain(self, faction_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -123,7 +124,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/chain", self.api.build_params(self.get_chain, locals()))
+        return self.api.request("/faction/chain", build_params(self.get_chain, locals()))
 
     def get_chains(self, faction_id: int = None, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -139,7 +140,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/chains", self.api.build_params(self.get_chains, locals()))
+        return self.api.request("/faction/chains", build_params(self.get_chains, locals()))
 
     def get_chainreport(self, chain_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -153,7 +154,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/chainreport", self.api.build_params(self.get_chainreport, locals()))
+        return self.api.request("/faction/chainreport", build_params(self.get_chainreport, locals()))
 
     def get_contributors(self, stat_key: FacContributorsStatOptions, contributors_category: FacCatScopeOptions = "current", timestamp: int = None, comment: str = None) -> dict:
         """
@@ -167,7 +168,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/contributors", self.api.build_params(self.get_contributors, locals()))
+        return self.api.request("/faction/contributors", build_params(self.get_contributors, locals()))
 
     def get_crimes(self, crimes_category: FacCrimesCatOptions = "all", crimes_filter: FacCrimesFiltersOptions = None, offset: int = 0, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -191,7 +192,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/crimes", self.api.build_params(self.get_crimes, locals()))
+        return self.api.request("/faction/crimes", build_params(self.get_crimes, locals()))
 
     def get_crime(self, crime_id: int, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -203,7 +204,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/crime", self.api.build_params(self.get_crime, locals()))
+        return self.api.request("/faction/crime", build_params(self.get_crime, locals()))
 
     def get_hof(self, faction_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -215,7 +216,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/hof", self.api.build_params(self.get_hof, locals()))
+        return self.api.request("/faction/hof", build_params(self.get_hof, locals()))
 
     def get_members(self, faction_id: int = None, striptags: bool = True, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -230,7 +231,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/members", self.api.build_params(self.get_members, locals()))
+        return self.api.request("/faction/members", build_params(self.get_members, locals()))
 
     def get_news(self, news_category: FacNewsCatOptions, striptags: bool = False, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -249,7 +250,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/news", self.api.build_params(self.get_news, locals()))
+        return self.api.request("/faction/news", build_params(self.get_news, locals()))
 
     def get_positions(self, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -261,7 +262,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/positions", self.api.build_params(self.get_positions, locals()))
+        return self.api.request("/faction/positions", build_params(self.get_positions, locals()))
 
     def get_rackets(self, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -272,7 +273,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/rackets", self.api.build_params(self.get_rackets, locals()))
+        return self.api.request("/faction/rackets", build_params(self.get_rackets, locals()))
 
     def get_raidreport(self, raid_war_id: int, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -284,7 +285,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/raidreport", self.api.build_params(self.get_raidreport, locals()))
+        return self.api.request("/faction/raidreport", build_params(self.get_raidreport, locals()))
 
     def get_raids(self, faction_id: int = None, limit: int = 20, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -300,7 +301,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/raids", self.api.build_params(self.get_raids, locals()))
+        return self.api.request("/faction/raids", build_params(self.get_raids, locals()))
 
     def get_rankedwars(self, faction_id: int = None, limit: int = 20, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -316,7 +317,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/rankedwars", self.api.build_params(self.get_rankedwars, locals()))
+        return self.api.request("/faction/rankedwars", build_params(self.get_rankedwars, locals()))
 
     def get_rankedwarreport(self, ranked_war_id: int, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -328,7 +329,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/rankedwarreport", self.api.build_params(self.get_rankedwarreport, locals()))
+        return self.api.request("/faction/rankedwarreport", build_params(self.get_rankedwarreport, locals()))
 
     def get_reports(self, report_category: ReportCatOptions = None, target_id: int = None, limit: int = 20, offset: int = 0, sort: SortOptions = "DESC", timestamp: int = None, comment: str = None) -> dict:
         """
@@ -345,7 +346,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/reports", self.api.build_params(self.get_reports, locals()))
+        return self.api.request("/faction/reports", build_params(self.get_reports, locals()))
 
     def get_revives(self, attack_filters: list[AttackFiltersOptions] = None, striptags: bool = True, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -363,7 +364,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/revives", self.api.build_params(self.get_revives, locals()))
+        return self.api.request("/faction/revives", build_params(self.get_revives, locals()))
 
     def get_revivesfull(self, attack_filters: list[AttackFiltersOptions] = None, striptags: bool = True, limit: int = 1000, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -381,7 +382,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/revivesFull", self.api.build_params(self.get_revivesfull, locals()))
+        return self.api.request("/faction/revivesFull", build_params(self.get_revivesfull, locals()))
 
     def get_search(self, faction_name: str = None, filters: list[str] = None, limit: int = 20, offset: int = 0, timestamp: int = None, comment: str = None) -> dict: #1F4A9 endpoint
         """
@@ -397,7 +398,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/search", self.api.build_params(self.get_search, locals()))
+        return self.api.request("/faction/search", build_params(self.get_search, locals()))
 
     def get_stats(self, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -409,7 +410,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/stats", self.api.build_params(self.get_stats, locals()))
+        return self.api.request("/faction/stats", build_params(self.get_stats, locals()))
 
     def get_territory(self, faction_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -421,7 +422,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/territory", self.api.build_params(self.get_territory, locals()))
+        return self.api.request("/faction/territory", build_params(self.get_territory, locals()))
 
     def get_territoryownership(self, limit: int = 20, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -434,7 +435,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/territoryownership", self.api.build_params(self.get_territoryownership, locals()))
+        return self.api.request("/faction/territoryownership", build_params(self.get_territoryownership, locals()))
 
     def get_territorywars(self, faction_id: int = None, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -450,7 +451,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/territorywars", self.api.build_params(self.get_territorywars, locals()))
+        return self.api.request("/faction/territorywars", build_params(self.get_territorywars, locals()))
 
     def get_territorywarreport(self, territory_war_id: int, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -462,7 +463,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/territorywarreport", self.api.build_params(self.get_territorywarreport, locals()))
+        return self.api.request("/faction/territorywarreport", build_params(self.get_territorywarreport, locals()))
 
     def get_upgrades(self, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -474,7 +475,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/upgrades", self.api.build_params(self.get_upgrades, locals()))
+        return self.api.request("/faction/upgrades", build_params(self.get_upgrades, locals()))
 
     def get_warfare(self, warfare_category: FacWarfareCatOptions, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -491,7 +492,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/warfare", self.api.build_params(self.get_warfare, locals()))
+        return self.api.request("/faction/warfare", build_params(self.get_warfare, locals()))
 
     def get_wars(self, faction_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -503,7 +504,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/wars", self.api.build_params(self.get_wars, locals()))
+        return self.api.request("/faction/wars", build_params(self.get_wars, locals()))
 
     def get_lookup(self, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -514,7 +515,7 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/lookup", self.api.build_params(self.get_lookup, locals()))
+        return self.api.request("/faction/lookup", build_params(self.get_lookup, locals()))
 
     def get_timestamp(self, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -525,4 +526,4 @@ class Faction:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/timestamp", self.api.build_params(self.get_timestamp, locals()))
+        return self.api.request("/faction/timestamp", build_params(self.get_timestamp, locals()))
