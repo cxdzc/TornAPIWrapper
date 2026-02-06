@@ -29,17 +29,17 @@ from typing import TYPE_CHECKING
 from ..params.builders import build_params
 
 if TYPE_CHECKING:
-    from ..client import TornAPIWrapper
+    from ..client_async import TornAPIWrapperAsync
 
 class Property:
     """
     Property API endpoints.
     """
 
-    def __init__(self, api: TornAPIWrapper):
+    def __init__(self, api: TornAPIWrapperAsync):
         self.api = api
 
-    def get_property(self, property_id: int, timestamp: int = None, comment: str = None):
+    async def get_property(self, property_id: int, timestamp: int = None, comment: str = None):
         """
         Get a specific property.
         API key (Public).
@@ -49,9 +49,9 @@ class Property:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/property/property", build_params(self.get_property, locals()))
+        return await self.api.request("/property/property", build_params(self.get_property, locals()))
 
-    def get_lookup(self, timestamp: int = None, comment: str = None):
+    async def get_lookup(self, timestamp: int = None, comment: str = None):
         """
         Get all available property selections.
         API key (Public).
@@ -60,9 +60,9 @@ class Property:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/property/lookup", build_params(self.get_lookup, locals()))
+        return await self.api.request("/property/lookup", build_params(self.get_lookup, locals()))
 
-    def get_timestamp(self, timestamp: int = None, comment: str = None):
+    async def get_timestamp(self, timestamp: int = None, comment: str = None):
         """
         Get current server time.
         API key (Public).
@@ -71,4 +71,4 @@ class Property:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/property/timestamp", build_params(self.get_timestamp, locals()))
+        return await self.api.request("/property/timestamp", build_params(self.get_timestamp, locals()))

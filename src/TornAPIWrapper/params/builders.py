@@ -8,7 +8,7 @@ def build_local_params(method_request: Callable, local_vars: dict) -> dict | Non
     Extracts the arguments passed to `method_request` and returns them as a clean dictionary ready for further processing.
     :param method_request: The `TornAPIWrapper` method.
     :param local_vars: A dictionary containing the `method_request` scope's local variables.
-    :return: A sterilized dictionary for further processing or None.
+    :return: A sterilized dictionary for further processing | None.
     :rtype: dict | None
     """
     return {param: local_vars[param] for param in inspect.signature(method_request).parameters if local_vars[param] is not None and param != "self"} or None

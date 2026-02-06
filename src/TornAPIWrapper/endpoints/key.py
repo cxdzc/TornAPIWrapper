@@ -29,7 +29,7 @@ from typing import TYPE_CHECKING
 from ..params.builders import build_params
 
 if TYPE_CHECKING:
-    from ..torn_api_wrapper import TornAPIWrapper
+    from ..client import TornAPIWrapper
 
 class Key:
     """

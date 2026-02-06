@@ -30,17 +30,17 @@ from ..params.builders import build_params
 from ..type_hints import SortOptions, MrktBazaarCatOptions, MrktItemBonusOptions
 
 if TYPE_CHECKING:
-    from ..client import TornAPIWrapper
+    from ..client_async import TornAPIWrapperAsync
 
 class Market:
     """
     Market API endpoints.
     """
 
-    def __init__(self, api: TornAPIWrapper):
+    def __init__(self, api: TornAPIWrapperAsync):
         self.api = api
 
-    def get_auctionhouselisting(self, listing_id: int, timestamp: int = None, comment: str = None) -> dict:
+    async def get_auctionhouselisting(self, listing_id: int, timestamp: int = None, comment: str = None) -> dict:
         """
         Get specific item auction house listings.
         API key (Public).
@@ -50,9 +50,9 @@ class Market:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/market/auctionhouselisting", build_params(self.get_auctionhouselisting, locals()))
+        return await self.api.request("/market/auctionhouselisting", build_params(self.get_auctionhouselisting, locals()))
 
-    def get_auctionhouse(self, item_id: int = None, limit: int = 20, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
+    async def get_auctionhouse(self, item_id: int = None, limit: int = 20, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get auction house listings or specific item auction house listings.
         API key (Public).
@@ -66,9 +66,9 @@ class Market:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/market/auctionhouse", build_params(self.get_auctionhouse, locals()))
+        return await self.api.request("/market/auctionhouse", build_params(self.get_auctionhouse, locals()))
 
-    def get_bazaar(self, item_id: int = None, bazaar_category: MrktBazaarCatOptions = None, timestamp: int = None, comment: str = None) -> dict:
+    async def get_bazaar(self, item_id: int = None, bazaar_category: MrktBazaarCatOptions = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get bazaar directory or specialized bazaar directory.
         API key (Public).
@@ -80,9 +80,9 @@ class Market:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/market/bazaar", build_params(self.get_bazaar, locals()))
+        return await self.api.request("/market/bazaar", build_params(self.get_bazaar, locals()))
 
-    def get_itemmarket(self, item_id: int, bonus: MrktItemBonusOptions = None, limit: int = 20, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
+    async def get_itemmarket(self, item_id: int, bonus: MrktItemBonusOptions = None, limit: int = 20, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
         """
         Get item market listings.
         API key (Public).
@@ -95,9 +95,9 @@ class Market:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/market/itemmarket", build_params(self.get_itemmarket, locals()))
+        return await self.api.request("/market/itemmarket", build_params(self.get_itemmarket, locals()))
 
-    def get_properties(self, property_type_id: int, limit: int = 20, offset: int = 0, sort: SortOptions = None, timestamp: int = None, comment: str = None) -> dict:
+    async def get_properties(self, property_type_id: int, limit: int = 20, offset: int = 0, sort: SortOptions = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get properties market listings.
         API key (Public).
@@ -110,9 +110,9 @@ class Market:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/market/properties", build_params(self.get_properties, locals()))
+        return await self.api.request("/market/properties", build_params(self.get_properties, locals()))
 
-    def get_rentals(self, property_type_id: int, limit: int = 20, offset: int = 0, sort: SortOptions = None, timestamp: int = None, comment: str = None) -> dict:
+    async def get_rentals(self, property_type_id: int, limit: int = 20, offset: int = 0, sort: SortOptions = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get properties rental listings.
         API key (Public).
@@ -125,9 +125,9 @@ class Market:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/market/rentals", build_params(self.get_rentals, locals()))
+        return await self.api.request("/market/rentals", build_params(self.get_rentals, locals()))
 
-    def get_lookup(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_lookup(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get all available market selections.
         API key (Public).
@@ -136,9 +136,9 @@ class Market:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/market/lookup", build_params(self.get_lookup, locals()))
+        return await self.api.request("/market/lookup", build_params(self.get_lookup, locals()))
 
-    def get_timestamp(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_timestamp(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get current server time.
         API key (Public).
@@ -147,4 +147,4 @@ class Market:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/market/timestamp", build_params(self.get_timestamp, locals()))
+        return await self.api.request("/market/timestamp", build_params(self.get_timestamp, locals()))

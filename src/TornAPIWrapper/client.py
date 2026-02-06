@@ -24,6 +24,7 @@ DEALINGS IN THE SOFTWARE.
 
 import requests
 
+from . import __version__
 from .endpoints.faction import Faction
 from .endpoints.forum import Forum
 from .endpoints.key import Key
@@ -45,7 +46,7 @@ class TornAPIWrapper:
         self.api_key = api_key
         self.request_timeout = request_timeout
         self.session = requests.Session()
-        self.session.headers.update({"Authorization": f"ApiKey {self.api_key}", "User-Agent": "TornAPIWrapper/2.0.0", "Accept": "application/json"})
+        self.session.headers.update({"Authorization": f"ApiKey {self.api_key}", "User-Agent": f"TornAPIWrapper/{__version__}", "Accept": "application/json"})
 
         self.user: User = User(self)
         self.faction: Faction = Faction(self)

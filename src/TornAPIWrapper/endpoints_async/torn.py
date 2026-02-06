@@ -30,16 +30,16 @@ from ..params.builders import build_params
 from ..type_hints import SortOptions, TornFactionHofCatOptions, TornHofCatOptions, TornItemsCatOptions
 
 if TYPE_CHECKING:
-    from ..client import TornAPIWrapper
+    from ..client_async import TornAPIWrapperAsync
 
 class Torn:
     """
     Torn API endpoints.
     """
-    def __init__(self, api: TornAPIWrapper):
+    def __init__(self, api: TornAPIWrapperAsync):
         self.api = api
 
-    def get_attacklog(self, attack_log_id: str, striptags: bool = True, offset: int = 0, sort: SortOptions = None, timestamp: int = None, comment: str = None) -> dict:
+    async def get_attacklog(self, attack_log_id: str, striptags: bool = True, offset: int = 0, sort: SortOptions = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get attack log details.
         API key (Public).
@@ -52,9 +52,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/attacklog", build_params(self.get_attacklog, locals()))
+        return await self.api.request("/torn/attacklog", build_params(self.get_attacklog, locals()))
 
-    def get_bounties(self, limit: int = 100, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
+    async def get_bounties(self, limit: int = 100, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
         """
         Get bounties.
         API key (Public).
@@ -65,9 +65,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/bounties", build_params(self.get_bounties, locals()))
+        return await self.api.request("/torn/bounties", build_params(self.get_bounties, locals()))
 
-    def get_calendar(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_calendar(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get calendar information.
         API key (Public).
@@ -77,9 +77,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/calendar", build_params(self.get_calendar, locals()))
+        return await self.api.request("/torn/calendar", build_params(self.get_calendar, locals()))
 
-    def get_crimes(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_crimes(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get crimes information.
         API key (Public).
@@ -89,9 +89,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/crimes", build_params(self.get_crimes, locals()))
+        return await self.api.request("/torn/crimes", build_params(self.get_crimes, locals()))
 
-    def get_education(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_education(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get education information.
         API key (Public).
@@ -100,9 +100,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/education", build_params(self.get_education, locals()))
+        return await self.api.request("/torn/education", build_params(self.get_education, locals()))
 
-    def get_elimination(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_elimination(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get current standings for all elimination teams.
         API key (Public).
@@ -111,9 +111,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/elimination", build_params(self.get_elimination, locals()))
+        return await self.api.request("/torn/elimination", build_params(self.get_elimination, locals()))
 
-    def get_eliminationteam(self, team_id: int, limit: int = 100, offset: int = None, timestamp: int = None, comment: str = None) -> dict:
+    async def get_eliminationteam(self, team_id: int, limit: int = 100, offset: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get players in a specific elimination team.
         API key (Public).
@@ -125,9 +125,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/eliminationteam", build_params(self.get_eliminationteam, locals()))
+        return await self.api.request("/torn/eliminationteam", build_params(self.get_eliminationteam, locals()))
 
-    def get_factionhof(self, leaderboard_category: TornFactionHofCatOptions, limit: int = 100, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
+    async def get_factionhof(self, leaderboard_category: TornFactionHofCatOptions, limit: int = 100, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
         """
         Get faction hall of fame positions for a specific category.
         API key (Public).
@@ -139,9 +139,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/factionhof", build_params(self.get_factionhof, locals()))
+        return await self.api.request("/torn/factionhof", build_params(self.get_factionhof, locals()))
 
-    def get_factiontree(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_factiontree(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get full faction tree.
         API key (Public).
@@ -150,9 +150,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/factiontree", build_params(self.get_factiontree, locals()))
+        return await self.api.request("/torn/factiontree", build_params(self.get_factiontree, locals()))
 
-    def get_honors(self, honor_ids: list[int] = None, limit: int = 20, offset: int = 0, sort: SortOptions = None, timestamp: int = None, comment: str = None) -> dict:
+    async def get_honors(self, honor_ids: list[int] = None, limit: int = 20, offset: int = 0, sort: SortOptions = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get all honors or specific honors.
         API key (Public).
@@ -165,9 +165,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/honors", build_params(self.get_honors, locals()))
+        return await self.api.request("/torn/honors", build_params(self.get_honors, locals()))
 
-    def get_hof(self, leaderboard_category: TornHofCatOptions, limit: int = 100, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
+    async def get_hof(self, leaderboard_category: TornHofCatOptions, limit: int = 100, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
         """
         Get player hall of fame positions for a specific category.
         API key (Public).
@@ -179,9 +179,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/hof", build_params(self.get_hof, locals()))
+        return await self.api.request("/torn/hof", build_params(self.get_hof, locals()))
 
-    def get_itemammo(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_itemammo(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get information about ammo.
         API key (Public).
@@ -190,9 +190,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/itemammo", build_params(self.get_itemammo, locals()))
+        return await self.api.request("/torn/itemammo", build_params(self.get_itemammo, locals()))
 
-    def get_itemdetails(self, item_id: int, timestamp: int = None, comment: str = None) -> dict:
+    async def get_itemdetails(self, item_id: int, timestamp: int = None, comment: str = None) -> dict:
         """
         Get information about a specific item.
         API key (Public).
@@ -202,9 +202,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/itemdetails", build_params(self.get_itemdetails, locals()))
+        return await self.api.request("/torn/itemdetails", build_params(self.get_itemdetails, locals()))
 
-    def get_itemmods(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_itemmods(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get information about weapon upgrades.
         API key (Public).
@@ -213,9 +213,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/itemmods", build_params(self.get_itemmods, locals()))
+        return await self.api.request("/torn/itemmods", build_params(self.get_itemmods, locals()))
 
-    def get_items(self, item_ids: list[int] = None, item_category: TornItemsCatOptions = None, sort: SortOptions = "ASC", timestamp: int = None, comment: str = None) -> dict:
+    async def get_items(self, item_ids: list[int] = None, item_category: TornItemsCatOptions = None, sort: SortOptions = "ASC", timestamp: int = None, comment: str = None) -> dict:
         """
         Get information about items.
         API key (Public).
@@ -230,9 +230,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/items", build_params(self.get_items, locals()))
+        return await self.api.request("/torn/items", build_params(self.get_items, locals()))
 
-    def get_logcategories(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_logcategories(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get available log categories.
         API key (Public).
@@ -241,9 +241,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/logcategories", build_params(self.get_logcategories, locals()))
+        return await self.api.request("/torn/logcategories", build_params(self.get_logcategories, locals()))
 
-    def get_logtypes(self, log_category_id_torn: int = None, timestamp: int = None, comment: str = None) -> dict:
+    async def get_logtypes(self, log_category_id_torn: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get available log categories or available log ids for a specific log category.
         API key (Public).
@@ -253,9 +253,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/logtypes", build_params(self.get_logtypes, locals()))
+        return await self.api.request("/torn/logtypes", build_params(self.get_logtypes, locals()))
 
-    def get_medals(self, medals_ids: list[int] = None, timestamp: int = None, comment: str = None) -> dict:
+    async def get_medals(self, medals_ids: list[int] = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get all medals or specific medals.
         API key (Public).
@@ -265,9 +265,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/medals", build_params(self.get_medals, locals()))
+        return await self.api.request("/torn/medals", build_params(self.get_medals, locals()))
 
-    def get_merits(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_merits(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get all merits.
         API key (Public).
@@ -276,9 +276,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/merits", build_params(self.get_merits, locals()))
+        return await self.api.request("/torn/merits", build_params(self.get_merits, locals()))
 
-    def get_organizedcrimes(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_organizedcrimes(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get organized crimes information.
         API key (Public).
@@ -288,9 +288,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/organizedcrimes", build_params(self.get_organizedcrimes, locals()))
+        return await self.api.request("/torn/organizedcrimes", build_params(self.get_organizedcrimes, locals()))
 
-    def get_properties(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_properties(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get properties details.
         API key (Public).
@@ -299,9 +299,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/properties", build_params(self.get_properties, locals()))
+        return await self.api.request("/torn/properties", build_params(self.get_properties, locals()))
 
-    def get_subcrimes(self, crime_id: int, timestamp: int = None, comment: str = None) -> dict:
+    async def get_subcrimes(self, crime_id: int, timestamp: int = None, comment: str = None) -> dict:
         """
         Get Subcrimes information.
         API key (Public).
@@ -312,9 +312,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/subcrimes", build_params(self.get_subcrimes, locals()))
+        return await self.api.request("/torn/subcrimes", build_params(self.get_subcrimes, locals()))
 
-    def get_territory(self, territory_ids: list[str] = None, limit: int = 20, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
+    async def get_territory(self, territory_ids: list[str] = None, limit: int = 20, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
         """
         Get territory details.
         API key (Public).
@@ -326,9 +326,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/territory", build_params(self.get_territory, locals()))
+        return await self.api.request("/torn/territory", build_params(self.get_territory, locals()))
 
-    def get_lookup(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_lookup(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get all available torn selections.
         API key (Public).
@@ -337,9 +337,9 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/lookup", build_params(self.get_lookup, locals()))
+        return await self.api.request("/torn/lookup", build_params(self.get_lookup, locals()))
 
-    def get_timestamp(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_timestamp(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get current server time.
         API key (Public).
@@ -348,4 +348,4 @@ class Torn:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/torn/timestamp", build_params(self.get_timestamp, locals()))
+        return await self.api.request("/torn/timestamp", build_params(self.get_timestamp, locals()))

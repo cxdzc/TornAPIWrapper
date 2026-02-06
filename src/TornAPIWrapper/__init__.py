@@ -64,10 +64,12 @@ from .errors import (
     InvalidLogId,
     InvalidInteractionLogCategory,
 )
-from .torn_api_wrapper import TornAPIWrapper
+from .client import TornAPIWrapper
+from .client_async import TornAPIWrapperAsync
 
 __all__ = [
     "TornAPIWrapper",
+    "TornAPIWrapperAsync",
 
     "WrapperError",
     "UnhandledAPIError",

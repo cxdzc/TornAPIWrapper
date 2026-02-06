@@ -17,7 +17,7 @@ classifiers = [
   "Topic :: Utilities",
   "Natural Language :: English"
 ]
-dependencies = ["requests"]
+dependencies = ["requests", "aiohttp"]
 description = "A Python wrapper for the Torn City API, providing access to Torn City data."
 keywords = ["torn", "torn-city", "torn-city-api", "torncom", "wrapper", "api", "python"]
 license = {file = "LICENSE"}

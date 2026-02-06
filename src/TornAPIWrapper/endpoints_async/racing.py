@@ -30,17 +30,17 @@ from ..params.builders import build_params
 from ..type_hints import SortOptions, RaceCatOptions, RaceCarCatOptions
 
 if TYPE_CHECKING:
-    from ..client import TornAPIWrapper
+    from ..client_async import TornAPIWrapperAsync
 
 class Racing:
     """
     Racing API endpoints.
     """
 
-    def __init__(self, api: TornAPIWrapper):
+    def __init__(self, api: TornAPIWrapperAsync):
         self.api = api
 
-    def get_cars(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_cars(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get cars and their racing stats.
         API key (Public).
@@ -50,9 +50,9 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/cars", build_params(self.get_cars, locals()))
+        return await self.api.request("/racing/cars", build_params(self.get_cars, locals()))
 
-    def get_carupgrades(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_carupgrades(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get all possible car upgrades.
         API key (Public).
@@ -62,9 +62,9 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/carupgrades", build_params(self.get_carupgrades, locals()))
+        return await self.api.request("/racing/carupgrades", build_params(self.get_carupgrades, locals()))
 
-    def get_races(self, race_category: RaceCatOptions = None, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
+    async def get_races(self, race_category: RaceCatOptions = None, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get races.
         API key (Public).
@@ -79,9 +79,9 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/races", build_params(self.get_races, locals()))
+        return await self.api.request("/racing/races", build_params(self.get_races, locals()))
 
-    def get_race(self, race_id: int, timestamp: int = None, comment: str = None) -> dict:
+    async def get_race(self, race_id: int, timestamp: int = None, comment: str = None) -> dict:
         """
         Get specific race details.
         API key (Public).
@@ -92,9 +92,9 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/race", build_params(self.get_race, locals()))
+        return await self.api.request("/racing/race", build_params(self.get_race, locals()))
 
-    def get_records(self, track_id: int, car_category: RaceCarCatOptions, timestamp: int = None, comment: str = None) -> dict:
+    async def get_records(self, track_id: int, car_category: RaceCarCatOptions, timestamp: int = None, comment: str = None) -> dict:
         """
         Get track records.
         API key (Public).
@@ -106,9 +106,9 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/records", build_params(self.get_records, locals()))
+        return await self.api.request("/racing/records", build_params(self.get_records, locals()))
 
-    def get_tracks(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_tracks(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get race tracks and descriptions.
         API key (Public).
@@ -118,9 +118,9 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/tracks", build_params(self.get_tracks, locals()))
+        return await self.api.request("/racing/tracks", build_params(self.get_tracks, locals()))
 
-    def get_lookup(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_lookup(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get all available racing selections.
         API key (Public).
@@ -129,9 +129,9 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/lookup", build_params(self.get_lookup, locals()))
+        return await self.api.request("/racing/lookup", build_params(self.get_lookup, locals()))
 
-    def get_timestamp(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_timestamp(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get current server time.
         API key (Public).
@@ -140,4 +140,4 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/timestamp", build_params(self.get_timestamp, locals()))
+        return await self.api.request("/racing/timestamp", build_params(self.get_timestamp, locals()))

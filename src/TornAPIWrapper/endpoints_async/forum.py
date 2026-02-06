@@ -30,17 +30,17 @@ from ..params.builders import build_params
 from ..type_hints import SortOptions
 
 if TYPE_CHECKING:
-    from ..client import TornAPIWrapper
+    from ..client_async import TornAPIWrapperAsync
 
 class Forum:
     """
     Forum API endpoints.
     """
 
-    def __init__(self, api: TornAPIWrapper):
+    def __init__(self, api: TornAPIWrapperAsync):
         self.api = api
 
-    def get_categories(self, timestamp: int = None, comment: str = None):
+    async def get_categories(self, timestamp: int = None, comment: str = None):
         """
         Get publicly available forum categories.
         API key (Public).
@@ -49,9 +49,9 @@ class Forum:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/forum/categories", build_params(self.get_categories, locals()))
+        return await self.api.request("/forum/categories", build_params(self.get_categories, locals()))
 
-    def get_posts(self, thread_id: int, striptags: bool = True, offset: int = None, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None):
+    async def get_posts(self, thread_id: int, striptags: bool = True, offset: int = None, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None):
         """
         Get specific forum thread posts.
         API key (Public).
@@ -68,9 +68,9 @@ class Forum:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/forum/posts", build_params(self.get_posts, locals()))
+        return await self.api.request("/forum/posts", build_params(self.get_posts, locals()))
 
-    def get_thread(self, thread_id: int, timestamp: int = None, comment: str = None):
+    async def get_thread(self, thread_id: int, timestamp: int = None, comment: str = None):
         """
         Get specific thread details.
         API key (Public).
@@ -81,9 +81,9 @@ class Forum:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/forum/thread", build_params(self.get_thread, locals()))
+        return await self.api.request("/forum/thread", build_params(self.get_thread, locals()))
 
-    def get_threads(self, category_ids: list[int] = None, limit: int = 100, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None):
+    async def get_threads(self, category_ids: list[int] = None, limit: int = 100, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None):
         """
         Get threads across all forum categories or for specific public forum category or categories.
         API key (Public).
@@ -97,9 +97,9 @@ class Forum:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/forum/threads", build_params(self.get_threads, locals()))
+        return await self.api.request("/forum/threads", build_params(self.get_threads, locals()))
 
-    def get_lookup(self, timestamp: int = None, comment: str = None):
+    async def get_lookup(self, timestamp: int = None, comment: str = None):
         """
         Get all available forum selections.
         API key (Public).
@@ -108,9 +108,9 @@ class Forum:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/forum/lookup", build_params(self.get_lookup, locals()))
+        return await self.api.request("/forum/lookup", build_params(self.get_lookup, locals()))
 
-    def get_timestamp(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_timestamp(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get current server time.
         API key (Public).
@@ -119,4 +119,4 @@ class Forum:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/forum/timestamp", build_params(self.get_timestamp, locals()))
+        return await self.api.request("/forum/timestamp", build_params(self.get_timestamp, locals()))
