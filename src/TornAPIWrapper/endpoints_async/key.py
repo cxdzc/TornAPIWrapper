@@ -26,18 +26,20 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from ..params.builders import build_params
+
 if TYPE_CHECKING:
-    from .torn_api_wrapper import TornAPIWrapper
+    from ..client_async import TornAPIWrapperAsync
 
 class Key:
     """
     Key API endpoints.
     """
 
-    def __init__(self, api: TornAPIWrapper):
+    def __init__(self, api: TornAPIWrapperAsync):
         self.api = api
 
-    def get_log(self, limit: int = 100, offset: int = None, timestamp: int = None, comment: str = None) -> dict:
+    async def get_log(self, limit: int = 100, offset: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get current key log history.
         API key (Public).
@@ -49,9 +51,9 @@ class Key:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/key/log", self.api.build_params(self.get_log, locals()))
+        return await self.api.request("/key/log", build_params(self.get_log, locals()))
 
-    def get_info(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_info(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get current key info.
         API key (Public).
@@ -60,4 +62,4 @@ class Key:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/key/info", self.api.build_params(self.get_info, locals()))
+        return await self.api.request("/key/info", build_params(self.get_info, locals()))

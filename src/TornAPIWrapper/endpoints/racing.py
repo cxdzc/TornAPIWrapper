@@ -26,10 +26,11 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from .type_hints import SortOptions, RaceCatOptions, RaceCarCatOptions
+from ..params.builders import build_params
+from ..type_hints import SortOptions, RaceCatOptions, RaceCarCatOptions
 
 if TYPE_CHECKING:
-    from .torn_api_wrapper import TornAPIWrapper
+    from ..client import TornAPIWrapper
 
 class Racing:
     """
@@ -49,7 +50,7 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/cars", self.api.build_params(self.get_cars, locals()))
+        return self.api.request("/racing/cars", build_params(self.get_cars, locals()))
 
     def get_carupgrades(self, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -61,7 +62,7 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/carupgrades", self.api.build_params(self.get_carupgrades, locals()))
+        return self.api.request("/racing/carupgrades", build_params(self.get_carupgrades, locals()))
 
     def get_races(self, race_category: RaceCatOptions = None, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -78,7 +79,7 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/races", self.api.build_params(self.get_races, locals()))
+        return self.api.request("/racing/races", build_params(self.get_races, locals()))
 
     def get_race(self, race_id: int, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -91,7 +92,7 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/race", self.api.build_params(self.get_race, locals()))
+        return self.api.request("/racing/race", build_params(self.get_race, locals()))
 
     def get_records(self, track_id: int, car_category: RaceCarCatOptions, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -105,7 +106,7 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/records", self.api.build_params(self.get_records, locals()))
+        return self.api.request("/racing/records", build_params(self.get_records, locals()))
 
     def get_tracks(self, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -117,7 +118,7 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/tracks", self.api.build_params(self.get_tracks, locals()))
+        return self.api.request("/racing/tracks", build_params(self.get_tracks, locals()))
 
     def get_lookup(self, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -128,7 +129,7 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/lookup", self.api.build_params(self.get_lookup, locals()))
+        return self.api.request("/racing/lookup", build_params(self.get_lookup, locals()))
 
     def get_timestamp(self, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -139,4 +140,4 @@ class Racing:
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/racing/timestamp", self.api.build_params(self.get_timestamp, locals()))
+        return self.api.request("/racing/timestamp", build_params(self.get_timestamp, locals()))

@@ -1,16 +1,25 @@
-![Banner](https://github.com/cxdzc/TornAPIWrapper/assets/110936008/271aa9c8-280e-4fd9-be9e-cd8b88d53329)
+<a href="https://github.com/cxdzc/TornAPIWrapper">
+  <img src="https://github.com/cxdzc/TornAPIWrapper/assets/110936008/271aa9c8-280e-4fd9-be9e-cd8b88d53329" alt="Banner">
+</a>
 
 <div align="center">
-<a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/v/TornAPIWrapper.svg></a>
-<a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/pyversions/TornAPIWrapper></a>
-<a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/badge/patch-27.01.2026-blue></a>
+<a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/v/tornapiwrapper?cacheSeconds=300></a>
+<a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/pyversions/tornapiwrapper?cacheSeconds=300></a>
+<a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pepy/dt/tornapiwrapper?color=blue&cacheSeconds=300></a>
+<a href="https://www.torn.com/api.html#:~:text=Patch%20Notes"><img src=https://img.shields.io/badge/Patch-27.01.2026-c4c4c4?cacheSeconds=300></a>
 <a rel="license" href="https://github.com/cxdzc/TornAPIWrapper/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-ab1436"/></a>
 </div>
 
-# 📦 TornAPIWrapper
+# 🌃 TornAPIWrapper
 A Python wrapper for the [Torn City API v2](https://www.torn.com/swagger.php), providing access to [Torn City](https://www.torn.com) data.
 
-# 📠 Instructions
+### ✨ Features
+* Sync and async support.
+* Built-in API error handling.
+* Modern, Pythonic API wrapper.
+
+
+# 💾 Instructions
 1. Install the [TornAPIWrapper](https://pypi.org/project/TornAPIWrapper) package by typing `pip install tornapiwrapper` in your terminal.
 2. Check out [examples](https://github.com/cxdzc/TornAPIWrapper/tree/main/Examples) and [documentations](https://github.com/cxdzc/TornAPIWrapper?tab=readme-ov-file#-documentations) to familiarize yourself with the API.
 3. Create an [API key](https://www.torn.com/preferences.php#tab=api).
