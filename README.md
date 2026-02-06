@@ -1,4 +1,6 @@
-![Banner](https://github.com/cxdzc/TornAPIWrapper/assets/110936008/271aa9c8-280e-4fd9-be9e-cd8b88d53329)
+<a href="https://github.com/cxdzc/TornAPIWrapper">
+  <img src="https://github.com/cxdzc/TornAPIWrapper/assets/110936008/271aa9c8-280e-4fd9-be9e-cd8b88d53329" alt="Banner">
+</a>
 
 <div align="center">
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/v/tornapiwrapper?cacheSeconds=300></a>
