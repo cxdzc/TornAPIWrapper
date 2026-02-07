@@ -3,11 +3,11 @@
 </a>
 
 <div align="center">
-<a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/v/tornapiwrapper?cacheSeconds=300></a>
+<a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/v/tornapiwrapper?cacheSeconds=300&v=2></a>
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pypi/pyversions/tornapiwrapper?cacheSeconds=300></a>
 <a href="https://pypi.org/project/TornAPIWrapper/"><img src=https://img.shields.io/pepy/dt/tornapiwrapper?color=blue&cacheSeconds=300></a>
-<a href="https://www.torn.com/api.html#:~:text=Patch%20Notes"><img src=https://img.shields.io/badge/Patch-27.01.2026-c4c4c4?cacheSeconds=300></a>
-<a rel="license" href="https://github.com/cxdzc/TornAPIWrapper/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-ab1436"/></a>
+<a href="https://www.torn.com/api.html#:~:text=Patch%20Notes"><img src=https://img.shields.io/badge/patch-27.01.2026-c4c4c4?cacheSeconds=300></a>
+<a rel="license" href="https://github.com/cxdzc/TornAPIWrapper/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-ab1436"/></a>
 </div>
 
 # 🌃 TornAPIWrapper
