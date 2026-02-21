@@ -548,6 +548,18 @@ class User:
         """
         return self.api.request("/user/organizedcrime", build_params(self.get_organizedcrime, locals()))
 
+    def get_organizedcrimes(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get available slots for organized crimes with status 'Recruiting'.
+        API key (Minimal).
+        Unlike 'faction' -> 'crimes', this selection only shows empty slots, and only for crimes with the 'Recruiting' status.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/user/organizedcrimes", build_params(self.get_organizedcrimes, locals()))
+
     def get_personalstats(self, user_id: int = None, stat_category: UserPrsnlStatsCatOptions = None, stat_keys: list[UserPrsnlStatsStatOptions] = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your personal stats or for a specific user.
