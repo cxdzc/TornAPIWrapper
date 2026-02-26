@@ -724,6 +724,17 @@ class User:
         """
         return await self.api.request("/user/skills", build_params(self.get_skills, locals()))
 
+    async def get_stocks(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get your stocks.
+        API key (Limited).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return await self.api.request("/user/stocks", build_params(self.get_stocks, locals()))
+
     async def get_travel(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your travel information.
