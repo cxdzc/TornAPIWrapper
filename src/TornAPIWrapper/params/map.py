@@ -14,6 +14,7 @@ param_id = {
     "log_category_id_torn",
     "property_id",
     "property_type_id",
+    "stock_id",
     "race_id",
     "raid_war_id",
     "ranked_war_id",

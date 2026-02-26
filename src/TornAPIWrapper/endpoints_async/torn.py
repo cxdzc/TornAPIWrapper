@@ -301,6 +301,18 @@ class Torn:
         """
         return await self.api.request("/torn/properties", build_params(self.get_properties, locals()))
 
+    async def get_stocks(self, stock_id: int = None, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get all stocks or specific stock with chart history.
+        API key (Public).
+        :param stock_id: Stock id.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return await self.api.request("/torn/stocks", build_params(self.get_stocks, locals()))
+
     async def get_subcrimes(self, crime_id: int, timestamp: int = None, comment: str = None) -> dict:
         """
         Get Subcrimes information.
