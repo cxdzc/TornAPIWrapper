@@ -15,6 +15,7 @@ param_id = {
     "property_id",
     "property_type_id",
     "stock_id",
+    "trade_id",
     "race_id",
     "raid_war_id",
     "ranked_war_id",
@@ -38,6 +39,7 @@ param_cat = {
     "race_category",
     "report_category",
     "stat_category",
+    "trade_category",
     "warfare_category",
 }
 param_group = {

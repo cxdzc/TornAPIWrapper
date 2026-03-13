@@ -28,7 +28,8 @@ from typing import TYPE_CHECKING
 
 from ..params.builders import build_params
 from ..type_hints import SortOptions, RaceCatOptions, UserListCatOptions, AttackFiltersOptions, \
-    UserPropertiesFiltersOptions, ReportCatOptions, UserPrsnlStatsCatOptions, UserPrsnlStatsStatOptions
+    UserPropertiesFiltersOptions, ReportCatOptions, UserPrsnlStatsCatOptions, UserPrsnlStatsStatOptions, \
+    UserTradeCatOptions
 
 if TYPE_CHECKING:
     from ..client import TornAPIWrapper
@@ -734,6 +735,36 @@ class User:
         :rtype: dict
         """
         return self.api.request("/user/stocks", build_params(self.get_stocks, locals()))
+
+    def get_trades(self, trade_category: UserTradeCatOptions = "ongoing", limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get your trades.
+        API key (Limited).
+        When requesting 'ongoing' trades (default), limit/offset/sort are not being used.
+        :param trade_category: Category of trades returned.
+        :param limit: Number of results to return.
+        :param sort: Sorted by the greatest timestamps.
+        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/user/trades", build_params(self.get_trades, locals()))
+
+    def get_trade(self, trade_id: int, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get your detailed trade.
+        API key (Limited).
+        Only possible to get trades you participated in.
+        :param trade_id: Trade id.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/user/trade", build_params(self.get_trade, locals()))
 
     def get_travel(self, timestamp: int = None, comment: str = None) -> dict:
         """

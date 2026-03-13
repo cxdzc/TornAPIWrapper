@@ -29,6 +29,7 @@ RaceCatOptions = Literal["official", "custom"]
 AttackFiltersOptions = Literal["incoming", "outgoing", "idFilter"]
 ReportCatOptions = Literal["mostwanted", "money", "stats", "references", "friendorfoe", "companyfinancials", "truelevel", "stockanalysis", "anonymousbounties", "investment"]
 
+UserTradeCatOptions = Literal["finished", "ongoing"]
 UserListCatOptions = Literal["Friends", "Enemies", "Targets"]
 UserPropertiesFiltersOptions = Literal["ownedByUser", "ownedBySpouse"]
 UserPrsnlStatsCatOptions = Literal["all", "popular", "attacking", "battle_stats", "jobs", "trading", "jail", "hospital", "finishing_hits", "communication", "crimes", "bounties", "investments", "items", "travel", "drugs", "missions", "racing", "networth", "other", "itemmarketcustomers", "itemmarketsales", "itemmarketrevenue", "itemmarketfees"]
