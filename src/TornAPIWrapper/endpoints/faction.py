@@ -170,7 +170,7 @@ class Faction:
         """
         return self.api.request("/faction/contributors", build_params(self.get_contributors, locals()))
 
-    def get_crimes(self, crimes_category: FacCrimesCatOptions = "all", crimes_filter: FacCrimesFiltersOptions = None, offset: int = 0, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
+    def get_crimes(self, crimes_category: FacCrimesCatOptions = "all", crimes_filter: FacCrimesFiltersOptions = None, limit: int = 20, offset: int = 0, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your faction's organized crimes.
         Requires faction API access permissions.
@@ -183,6 +183,7 @@ class Faction:
          - For category 'planning', the ordering field is 'ready_at'.
         :param crimes_category: Category of organized crimes returned. Category 'available' includes both 'recruiting' & 'planning', and category 'completed' includes both 'successful' & 'failure'.
         :param crimes_filter: It's possible to set this parameter to specify a field used for the sort, from & to query parameters. If not specified, the field will default to the category sorting as described above.
+        :param limit: Number of results to return.
         :param offset: Number of rows to skip before returning results.
         :param sort: Sorted by the greatest timestamps.
         :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
@@ -335,7 +336,8 @@ class Faction:
         """
         Get faction reports.
         API key (Limited).
-        The default limit is set to 25. However, the limit can be set to 100 for the 'stats' category.
+        The limit is set to 25 when requesting any category other than 'stats'.
+        When requesting the 'stats' category, limit can be increased up to 100.
         :param report_category: Used to filter reports with a specific type.
         :param target_id: Get reports for a specific player by passing their player ID.
         :param limit: Number of results to return.
