@@ -668,6 +668,8 @@ class User:
         """
         Get your reports.
         API key (Limited).
+        The limit is set to 25 when requesting any category other than 'stats'.
+        When requesting the 'stats' category, limit can be increased up to 100.
         :param report_category: Used to filter reports with a specific type.
         :param target_id: Get reports for a specific player by passing their player ID.
         :param limit: Number of results to return.
