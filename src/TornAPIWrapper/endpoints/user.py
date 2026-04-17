@@ -29,7 +29,7 @@ from typing import TYPE_CHECKING
 from ..params.builders import build_params
 from ..type_hints import SortOptions, RaceCatOptions, UserListCatOptions, AttackFiltersOptions, \
     UserPropertiesFiltersOptions, ReportCatOptions, UserPrsnlStatsCatOptions, UserPrsnlStatsStatOptions, \
-    UserTradeCatOptions
+    UserTradeCatOptions, UserInventoryCatOptions
 
 if TYPE_CHECKING:
     from ..client import TornAPIWrapper
@@ -364,6 +364,21 @@ class User:
         :rtype: dict
         """
         return self.api.request("/user/icons", build_params(self.get_icons, locals()))
+
+    def get_inventory(self, inventory_category: UserInventoryCatOptions, limit: int = 20, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get your inventory.
+        API key (Limited).
+        Cached selection (1 hour per category).
+        :param inventory_category: Items category.
+        :param offset: Number of rows to skip before returning results.
+        :param limit: Number of results to return.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/user/inventory", build_params(self.get_inventory, locals()))
 
     def get_itemmarket(self, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
         """
