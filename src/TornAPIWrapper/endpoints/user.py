@@ -145,6 +145,18 @@ class User:
         """
         return self.api.request("/user/calendar", build_params(self.get_calendar, locals()))
 
+    def get_casino(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get your casino streak & tokens.
+        API key (Limited).
+        Only available to yourself.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/user/casino", build_params(self.get_casino, locals()))
+
     def get_competition(self, user_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your competition information or for a specific player.
