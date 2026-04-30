@@ -25,6 +25,7 @@ DEALINGS IN THE SOFTWARE.
 import aiohttp
 
 from . import __version__
+from .endpoints_async.company import Company
 from .endpoints_async.faction import Faction
 from .endpoints_async.forum import Forum
 from .endpoints_async.key import Key
@@ -56,6 +57,7 @@ class TornAPIWrapperAsync:
 
         self.user: User = User(self)
         self.faction: Faction = Faction(self)
+        self.company: Company = Company(self)
         self.market: Market = Market(self)
         self.forum: Forum = Forum(self)
         self.racing: Racing = Racing(self)
