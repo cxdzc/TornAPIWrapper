@@ -7,6 +7,7 @@ param_ids = {"category_ids", "honor_ids", "item_ids", "medals_ids", "territory_i
 param_filters = {"attack_filters", "crimes_filter", "property_filters"}
 param_id = {
     "chain_id",
+    "company_id",
     "crime_id",
     "faction_id",
     "item_id",

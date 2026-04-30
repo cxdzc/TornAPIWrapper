@@ -25,6 +25,7 @@ DEALINGS IN THE SOFTWARE.
 import requests
 
 from . import __version__
+from .endpoints.company import Company
 from .endpoints.faction import Faction
 from .endpoints.forum import Forum
 from .endpoints.key import Key
@@ -50,6 +51,7 @@ class TornAPIWrapper:
 
         self.user: User = User(self)
         self.faction: Faction = Faction(self)
+        self.company: Company = Company(self)
         self.market: Market = Market(self)
         self.forum: Forum = Forum(self)
         self.racing: Racing = Racing(self)
