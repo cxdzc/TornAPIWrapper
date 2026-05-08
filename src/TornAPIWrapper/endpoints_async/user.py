@@ -404,6 +404,17 @@ class User:
         """
         return await self.api.request("/user/itemmarket", build_params(self.get_itemmarket, locals()))
 
+    async def get_itemmods(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get your information about available item mods.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return await self.api.request("/user/itemmods", build_params(self.get_itemmods, locals()))
+
     async def get_job(self, user_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your job information or for a specific player.
