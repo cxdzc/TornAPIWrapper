@@ -27,6 +27,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from ..params.builders import build_params
+from ..type_hints import CpnyNewsCatOptions, SortOptions
 
 if TYPE_CHECKING:
     from ..client import TornAPIWrapper
@@ -63,6 +64,38 @@ class Company:
         :rtype: dict
         """
         return self.api.request("/company/employees", build_params(self.get_employees, locals()))
+
+    def get_news(self, news_category: CpnyNewsCatOptions, striptags: bool = False, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None):
+        """
+        Get your company's news details.
+        API key (Minimal).
+        :param news_category: News category type.
+        :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
+        :param limit: Number of results to return.
+        :param sort: Sorted by the greatest timestamps.
+        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/company/news", build_params(self.get_news, locals()))
+
+    def get_companies(self, company_type_id: int, striptags: bool = True, limit: int = 20, offset: int = None, timestamp: int = None, comment: str = None):
+        """
+        Get a list of companies for a specific company type.
+        API key (Public).
+        :param company_type_id: Company type id.
+        :param limit: Number of results to return.
+        :param offset: Number of rows to skip before returning results.
+        :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/company/companies", build_params(self.get_companies, locals()))
 
     def get_profile(self, company_id: int = None, striptags: bool = True, timestamp: int = None, comment: str = None):
         """
