@@ -8,6 +8,7 @@ param_filters = {"attack_filters", "crimes_filter", "property_filters"}
 param_id = {
     "chain_id",
     "company_id",
+    "company_type_id",
     "crime_id",
     "faction_id",
     "item_id",
