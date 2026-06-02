@@ -111,6 +111,36 @@ class Company:
         """
         return await self.api.request("/company/profile", build_params(self.get_profile, locals()))
 
+    async def get_search(self, company_name: str = None, filters: list[str] = None, limit: int = 20, offset: int = 0, timestamp: int = None, comment: str = None) -> dict: #1F4A9 endpoint
+        """
+        Search companies by name or other criteria.
+        API key (Public).
+        This selection is standalone and cannot be used together with other selections.
+        :param company_name: Name to search for.
+        :param filters: A filtering query parameter allowing a comma-separated list of filters.
+        :param limit: Number of results to return.
+        :param offset: Number of rows to skip before returning results.
+        :param timestamp: Timestamp to bypass cache or get the data in specific point in time.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return await self.api.request("/company/search", build_params(self.get_search, locals()))
+
+    async def get_snapshot(self, timestamp: int = None, comment: str = None):
+        """
+        Get daily companies snapshot CSV.
+        API key (Public).
+        Returns a CSV daily snapshot of companies.
+        This selection is standalone and cannot be used together with other selections.
+        CSV columns: id, name, created_at, days_old, image, type, rating, director_id, employees_hired, employees_capacity, daily_income, daily_customers, weekly_income, weekly_customers, applications_allowed
+        :param timestamp: Timestamp to bypass cache or get the data in specific point in time.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return await self.api.request("/company/snapshot", build_params(self.get_snapshot, locals()))
+
     async def get_stock(self, timestamp: int = None, comment: str = None):
         """
         Get your company's stock.
