@@ -1,6 +1,6 @@
 param_from = {"from_"}
 param_target = {"target_id"}
-param_name = {"faction_name"}
+param_name = {"company_name", "faction_name"}
 param_stat = {"stat_key", "stat_keys"}
 param_log = {"attack_log_id", "log_id"}
 param_ids = {"category_ids", "honor_ids", "item_ids", "medals_ids", "territory_ids"}
