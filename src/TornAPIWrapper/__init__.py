@@ -26,7 +26,7 @@ __author__ = "cxdzc"
 __copyright__ = "Copyright 2023-Present cxdzc"
 __license__ = "MIT"
 __title__ = "TornAPIWrapper"
-__version__ = "2.9.0"
+__version__ = "2.9.1"
 __patch__ = "01.06.2026"
 
 from .errors import (
