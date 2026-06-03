@@ -35,6 +35,8 @@ from .endpoints.racing import Racing
 from .endpoints.torn import Torn
 from .endpoints.user import User
 from .errors import TornAPIErrorHandler
+from .text_response_endpoints import text_response_endpoints
+
 
 class TornAPIWrapper:
     """
@@ -59,16 +61,18 @@ class TornAPIWrapper:
         self.key: Key = Key(self)
         self.torn: Torn = Torn(self)
 
-    def request(self, endpoint: str, params: dict | None) -> dict:
+    def request(self, endpoint: str, params: dict | None) -> dict | str:
         """
-        Sends a request to the Torn API and returns the JSON response.
+        Sends a request to the Torn API and returns either JSON data or raw text.
         :param endpoint: Torn API endpoint path.
         :param params: Query parameters to include in the request.
         :return: API response data.
-        :rtype: dict
+        :rtype: dict | str
         """
         api_request = self.session.get(url=f"{self.BASE_URL}{endpoint}", params=params, timeout=self.request_timeout)
         api_request.raise_for_status()
+        if endpoint in text_response_endpoints:
+            return api_request.text
         api_request_json = api_request.json()
         api_request_error = api_request_json.get("error")
         if api_request_error:
