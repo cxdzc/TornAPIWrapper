@@ -402,6 +402,20 @@ class Faction:
         """
         return await self.api.request("/faction/search", build_params(self.get_search, locals()))
 
+    async def get_snapshot(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get daily factions snapshot CSV.
+        API key (Public).
+        Returns a CSV daily snapshot of factions.
+        This selection is standalone and cannot be used together with other selections.
+        CSV columns: id, name, tag, tag_image, banner_image, leader_id, co_leader_id, respect, days_old, rank, members, members_max, member_list, recruiting, destroyed_timestamp
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return await self.api.request("/faction/snapshot", build_params(self.get_snapshot, locals()))
+
     async def get_stats(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your faction's challenges stats.
