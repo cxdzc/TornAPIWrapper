@@ -1,1 +1,1 @@
-text_response_endpoints = {"/company/snapshot", "/faction/snapshot"}
+text_response_endpoints = {"/user/snapshot", "/faction/snapshot", "/company/snapshot"}
