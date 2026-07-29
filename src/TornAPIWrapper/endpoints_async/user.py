@@ -765,6 +765,20 @@ class User:
         """
         return await self.api.request("/user/skills", build_params(self.get_skills, locals()))
 
+    async def get_snapshot(self, timestamp: int = None, comment: str = None) -> str:
+        """
+        Get daily active players snapshot CSV.
+        API key (Public).
+        Returns a CSV daily snapshot of active players.
+        This selection is standalone and cannot be used together with other selections.
+        CSV columns: id, name, gender, role, signed_up, last_action, level, rank, donator, networth, faction, company, spouse, display_case, bazaar, location, fed, fed_reason
+        :param timestamp: Timestamp to bypass cache or get the data in specific point in time.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: str
+        """
+        return await self.api.request("/user/snapshot", build_params(self.get_snapshot, locals()))
+
     async def get_stocks(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your stocks.

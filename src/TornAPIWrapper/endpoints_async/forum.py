@@ -40,7 +40,7 @@ class Forum:
     def __init__(self, api: TornAPIWrapperAsync):
         self.api = api
 
-    async def get_categories(self, timestamp: int = None, comment: str = None):
+    async def get_categories(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get publicly available forum categories.
         API key (Public).
@@ -51,7 +51,7 @@ class Forum:
         """
         return await self.api.request("/forum/categories", build_params(self.get_categories, locals()))
 
-    async def get_posts(self, thread_id: int, striptags: bool = True, offset: int = None, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None):
+    async def get_posts(self, thread_id: int, striptags: bool = True, offset: int = None, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get specific forum thread posts.
         API key (Public).
@@ -70,7 +70,7 @@ class Forum:
         """
         return await self.api.request("/forum/posts", build_params(self.get_posts, locals()))
 
-    async def get_thread(self, thread_id: int, timestamp: int = None, comment: str = None):
+    async def get_thread(self, thread_id: int, timestamp: int = None, comment: str = None) -> dict:
         """
         Get specific thread details.
         API key (Public).
@@ -83,7 +83,7 @@ class Forum:
         """
         return await self.api.request("/forum/thread", build_params(self.get_thread, locals()))
 
-    async def get_threads(self, category_ids: list[int] = None, limit: int = 100, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None):
+    async def get_threads(self, category_ids: list[int] = None, limit: int = 100, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get threads across all forum categories or for specific public forum category or categories.
         API key (Public).
@@ -99,7 +99,7 @@ class Forum:
         """
         return await self.api.request("/forum/threads", build_params(self.get_threads, locals()))
 
-    async def get_lookup(self, timestamp: int = None, comment: str = None):
+    async def get_lookup(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get all available forum selections.
         API key (Public).

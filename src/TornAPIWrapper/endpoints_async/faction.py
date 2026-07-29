@@ -402,7 +402,7 @@ class Faction:
         """
         return await self.api.request("/faction/search", build_params(self.get_search, locals()))
 
-    async def get_snapshot(self, timestamp: int = None, comment: str = None) -> dict:
+    async def get_snapshot(self, timestamp: int = None, comment: str = None) -> str:
         """
         Get daily factions snapshot CSV.
         API key (Public).
@@ -412,7 +412,7 @@ class Faction:
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
-        :rtype: dict
+        :rtype: str
         """
         return await self.api.request("/faction/snapshot", build_params(self.get_snapshot, locals()))
 
