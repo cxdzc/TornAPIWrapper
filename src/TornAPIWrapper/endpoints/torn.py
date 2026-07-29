@@ -278,6 +278,17 @@ class Torn:
         """
         return self.api.request("/torn/merits", build_params(self.get_merits, locals()))
 
+    def get_museum(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get all museum sets.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache or get the data in specific point in time.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/torn/museum", build_params(self.get_museum, locals()))
+
     def get_organizedcrimes(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get organized crimes information.

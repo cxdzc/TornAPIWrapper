@@ -40,7 +40,7 @@ class Company:
     def __init__(self, api: TornAPIWrapperAsync):
         self.api = api
 
-    async def get_applications(self, timestamp: int = None, comment: str = None):
+    async def get_applications(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your company's applications.
         API key (Limited).
@@ -51,7 +51,7 @@ class Company:
         """
         return await self.api.request("/company/applications", build_params(self.get_applications, locals()))
 
-    async def get_employees(self, company_id: int = None, striptags: bool = True, timestamp: int = None, comment: str = None):
+    async def get_employees(self, company_id: int = None, striptags: bool = True, timestamp: int = None, comment: str = None) -> dict:
         """
         Get my company's employees.
         API key (Public).
@@ -65,7 +65,7 @@ class Company:
         """
         return await self.api.request("/company/employees", build_params(self.get_employees, locals()))
 
-    async def get_news(self, news_category: CpnyNewsCatOptions, striptags: bool = False, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None):
+    async def get_news(self, news_category: CpnyNewsCatOptions, striptags: bool = False, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your company's news details.
         API key (Minimal).
@@ -82,7 +82,7 @@ class Company:
         """
         return await self.api.request("/company/news", build_params(self.get_news, locals()))
 
-    async def get_companies(self, company_type_id: int, striptags: bool = True, limit: int = 20, offset: int = None, timestamp: int = None, comment: str = None):
+    async def get_companies(self, company_type_id: int, striptags: bool = True, limit: int = 20, offset: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get a list of companies for a specific company type.
         API key (Public).
@@ -97,7 +97,7 @@ class Company:
         """
         return await self.api.request("/company/companies", build_params(self.get_companies, locals()))
 
-    async def get_profile(self, company_id: int = None, striptags: bool = True, timestamp: int = None, comment: str = None):
+    async def get_profile(self, company_id: int = None, striptags: bool = True, timestamp: int = None, comment: str = None) -> dict:
         """
         Get a company's profile.
         API key (Public).
@@ -127,7 +127,7 @@ class Company:
         """
         return await self.api.request("/company/search", build_params(self.get_search, locals()))
 
-    async def get_snapshot(self, timestamp: int = None, comment: str = None):
+    async def get_snapshot(self, timestamp: int = None, comment: str = None) -> str:
         """
         Get daily companies snapshot CSV.
         API key (Public).
@@ -137,11 +137,11 @@ class Company:
         :param timestamp: Timestamp to bypass cache or get the data in specific point in time.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
-        :rtype: dict
+        :rtype: str
         """
         return await self.api.request("/company/snapshot", build_params(self.get_snapshot, locals()))
 
-    async def get_stock(self, timestamp: int = None, comment: str = None):
+    async def get_stock(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your company's stock.
         API key (Limited).
@@ -152,7 +152,7 @@ class Company:
         """
         return await self.api.request("/company/stock", build_params(self.get_stock, locals()))
 
-    async def get_lookup(self, timestamp: int = None, comment: str = None):
+    async def get_lookup(self, timestamp: int = None, comment: str = None) -> dict:
         """
         API key (Public).
         :param timestamp: Timestamp to bypass cache.
@@ -162,7 +162,7 @@ class Company:
         """
         return await self.api.request("/company/lookup", build_params(self.get_lookup, locals()))
 
-    async def get_timestamp(self, timestamp: int = None, comment: str = None):
+    async def get_timestamp(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get current server time.
         API key (Public).

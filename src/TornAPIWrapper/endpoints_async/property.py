@@ -39,7 +39,7 @@ class Property:
     def __init__(self, api: TornAPIWrapperAsync):
         self.api = api
 
-    async def get_property(self, property_id: int, timestamp: int = None, comment: str = None):
+    async def get_property(self, property_id: int, timestamp: int = None, comment: str = None) -> dict:
         """
         Get a specific property.
         API key (Public).
@@ -51,7 +51,7 @@ class Property:
         """
         return await self.api.request("/property/property", build_params(self.get_property, locals()))
 
-    async def get_lookup(self, timestamp: int = None, comment: str = None):
+    async def get_lookup(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get all available property selections.
         API key (Public).
@@ -62,7 +62,7 @@ class Property:
         """
         return await self.api.request("/property/lookup", build_params(self.get_lookup, locals()))
 
-    async def get_timestamp(self, timestamp: int = None, comment: str = None):
+    async def get_timestamp(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get current server time.
         API key (Public).
