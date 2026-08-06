@@ -554,6 +554,17 @@ class User:
         """
         return self.api.request("/user/newevents", build_params(self.get_newevents, locals()))
 
+    def get_networth(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get your networth.
+        API key (Limited).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/user/networth", build_params(self.get_networth, locals()))
+
     def get_newmessages(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your unseen messages.
@@ -598,6 +609,17 @@ class User:
         :rtype: dict
         """
         return self.api.request("/user/organizedcrimes", build_params(self.get_organizedcrimes, locals()))
+
+    def get_perks(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get your current perks.
+        API key (Minimal).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/user/perks", build_params(self.get_perks, locals()))
 
     def get_personalstats(self, user_id: int = None, stat_category: UserPrsnlStatsCatOptions = None, stat_keys: list[UserPrsnlStatsStatOptions] = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -771,7 +793,7 @@ class User:
         API key (Public).
         Returns a CSV daily snapshot of active players.
         This selection is standalone and cannot be used together with other selections.
-        CSV columns: id, name, gender, role, signed_up, last_action, level, rank, donator, networth, faction, company, spouse, display_case, bazaar, location, fed, fed_reason
+        CSV columns: id, name, gender, signed_up, level, rank, donator, faction, company, job, spouse, display_case, bazaar, fed, fed_reason, time_played, awards
         :param timestamp: Timestamp to bypass cache or get the data in specific point in time.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
