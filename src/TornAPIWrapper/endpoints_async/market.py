@@ -112,6 +112,17 @@ class Market:
         """
         return await self.api.request("/market/properties", build_params(self.get_properties, locals()))
 
+    async def get_pointsmarket(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get points market listings.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return await self.api.request("/market/pointsmarket", build_params(self.get_pointsmarket, locals()))
+
     async def get_rentals(self, property_type_id: int, limit: int = 20, offset: int = 0, sort: SortOptions = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get properties rental listings.
