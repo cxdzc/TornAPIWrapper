@@ -787,6 +787,22 @@ class User:
         """
         return self.api.request("/user/skills", build_params(self.get_skills, locals()))
 
+    def get_search(self, user_name: str = None, filters: list[str] = None, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Search users by name or other criteria.
+        API key (Public).
+        This selection is standalone and cannot be used together with other selections.
+        It's always limited to return just 25 records.
+        :param user_name: The user's name you would like to search for.
+        :param filters: A filtering query parameter allowing a comma-separated list of filters.
+        :param offset: Number of rows to skip before returning results.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/user/search", build_params(self.get_search, locals()))
+
     def get_snapshot(self, timestamp: int = None, comment: str = None) -> str:
         """
         Get daily active players snapshot CSV.

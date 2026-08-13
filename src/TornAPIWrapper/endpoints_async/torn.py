@@ -79,6 +79,17 @@ class Torn:
         """
         return await self.api.request("/torn/calendar", build_params(self.get_calendar, locals()))
 
+    async def get_companies(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get all companies details.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return await self.api.request("/torn/companies", build_params(self.get_companies, locals()))
+
     async def get_crimes(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get crimes information.
