@@ -27,8 +27,8 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from ..params.builders import build_params
-from ..type_hints import SortOptions, FacCatScopeOptions, AttackFiltersOptions, FacContributorsStatOptions, \
-    FacCrimesCatOptions, FacCrimesFiltersOptions, FacNewsCatOptions, ReportCatOptions, FacWarfareCatOptions
+from ..type_hints import SortOptions, FacScopeCatOptions, AttackFiltersOptions, FacContributorsStatOptions, \
+    FacCrimesCatOptions, FacCrimesFiltersOptions, FacNewsCatOptions, ReportCatOptions, FacWarChainsCatOptions
 
 if TYPE_CHECKING:
     from ..client import TornAPIWrapper
@@ -87,7 +87,7 @@ class Faction:
         """
         return self.api.request("/faction/attacksfull", build_params(self.get_attacksfull, locals()))
 
-    def get_balance(self, balance_category: FacCatScopeOptions = "current", timestamp: int = None, comment: str = None) -> dict:
+    def get_balance(self, balance_category: FacScopeCatOptions = "current", timestamp: int = None, comment: str = None) -> dict:
         """
         Get your faction's & member's balance details.
         Requires faction API access permissions.
@@ -156,7 +156,7 @@ class Faction:
         """
         return self.api.request("/faction/chainreport", build_params(self.get_chainreport, locals()))
 
-    def get_contributors(self, stat_key: FacContributorsStatOptions, contributors_category: FacCatScopeOptions = "current", timestamp: int = None, comment: str = None) -> dict:
+    def get_contributors(self, stat_key: FacContributorsStatOptions, contributors_category: FacScopeCatOptions = "current", timestamp: int = None, comment: str = None) -> dict:
         """
         Get your faction's challenge contributors.
         Requires faction API access permissions.
@@ -206,6 +206,17 @@ class Faction:
         :rtype: dict
         """
         return self.api.request("/faction/crime", build_params(self.get_crime, locals()))
+
+    def get_dirtybombs(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get all dirty bombs.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/faction/dirtybombs", build_params(self.get_dirtybombs, locals()))
 
     def get_hof(self, faction_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -493,22 +504,67 @@ class Faction:
         """
         return self.api.request("/faction/upgrades", build_params(self.get_upgrades, locals()))
 
-    def get_warfare(self, warfare_category: FacWarfareCatOptions, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
+    def get_warfarechains(self, warfare_chains_category: FacWarChainsCatOptions = "active", limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
-        Get faction warfare.
+        Get all chains.
         API key (Public).
-        The response depends on the selected category.
-        :param warfare_category: Warefare categories.
+        By default, active chains are returned.
+        :param warfare_chains_category: Specify whether to return active or completed chains.
         :param limit: Number of results to return.
         :param sort: Sorted by the greatest timestamps.
-        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
         :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
+        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
         :rtype: dict
         """
-        return self.api.request("/faction/warfare", build_params(self.get_warfare, locals()))
+        return self.api.request("/faction/warfarechains", build_params(self.get_warfarechains, locals()))
+
+    def get_warfareraids(self, limit: int = 100, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get all raids.
+        API key (Public).
+        :param limit: Number of results to return.
+        :param sort: Sorted by the greatest timestamps.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
+        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/faction/warfareraids", build_params(self.get_warfareraids, locals()))
+
+    def get_warfareranked(self, limit: int = 100, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get all ranked wars.
+        API key (Public).
+        :param limit: Number of results to return.
+        :param sort: Sorted by the greatest timestamps.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
+        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/faction/warfareranked", build_params(self.get_warfareranked, locals()))
+
+    def get_warfareterritory(self, limit: int = 100, sort: SortOptions = None, to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get all territory wars.
+        API key (Public).
+        :param limit: Number of results to return.
+        :param sort: Sorted by the greatest timestamps.
+        :param from_: Timestamp that sets the lower limit for the data returned. Data returned will be after this time.
+        :param to: Timestamp that sets the upper limit for the data returned. Data returned will be up to and including this time.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/faction/warfareterritory", build_params(self.get_warfareterritory, locals()))
 
     def get_wars(self, faction_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
