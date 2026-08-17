@@ -339,6 +339,17 @@ class User:
         """
         return self.api.request("/user/forumthreads", build_params(self.get_forumthreads, locals()))
 
+    def get_gym(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get your currently active gym.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/user/gym", build_params(self.get_gym, locals()))
+
     def get_hof(self, user_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your hall of fame rankings or for a specific player.
@@ -483,10 +494,12 @@ class User:
         """
         return self.api.request("/user/log", build_params(self.get_log, locals()))
 
-    def get_medals(self, timestamp: int = None, comment: str = None) -> dict:
+    def get_medals(self, user_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
-        Get your achieved medals.
+        Get all your achieved medals or for a specific player.
         API key (Public).
+        Specific User -  Returns only highest medal in each category (just like profiles on site).
+        :param user_id: User id or user discord id.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.

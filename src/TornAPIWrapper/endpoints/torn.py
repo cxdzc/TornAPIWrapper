@@ -163,6 +163,17 @@ class Torn:
         """
         return self.api.request("/torn/factiontree", build_params(self.get_factiontree, locals()))
 
+    def get_gyms(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get all gyms.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/torn/gyms", build_params(self.get_gyms, locals()))
+
     def get_honors(self, honor_ids: list[int] = None, limit: int = 20, offset: int = 0, sort: SortOptions = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get all honors or specific honors.
@@ -322,6 +333,28 @@ class Torn:
         :rtype: dict
         """
         return self.api.request("/torn/properties", build_params(self.get_properties, locals()))
+
+    def get_searchforcash(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get search for cash crime statuses.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/torn/searchforcash", build_params(self.get_searchforcash, locals()))
+
+    def get_shoplifting(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get shoplifting crime statuses
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/torn/shoplifting", build_params(self.get_shoplifting, locals()))
 
     def get_stocks(self, stock_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """

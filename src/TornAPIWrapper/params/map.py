@@ -43,7 +43,7 @@ param_cat = {
     "report_category",
     "stat_category",
     "trade_category",
-    "warfare_category",
+    "warfare_chains_category",
 }
 param_group = {
     "from": param_from,

@@ -68,7 +68,7 @@ class Company:
     def get_news(self, news_category: CpnyNewsCatOptions, striptags: bool = False, limit: int = 100, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your company's news details.
-        API key (Minimal).
+        API key (Limited).
         :param news_category: News category type.
         :param striptags: Determines if fields include HTML or not ('Hospitalized by user' vs 'Hospitalized by user').
         :param limit: Number of results to return.
