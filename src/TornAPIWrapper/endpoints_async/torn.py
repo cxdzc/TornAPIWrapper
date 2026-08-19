@@ -54,6 +54,17 @@ class Torn:
         """
         return await self.api.request("/torn/attacklog", build_params(self.get_attacklog, locals()))
 
+    async def get_bank(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get current bank rates.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return await self.api.request("/torn/bank", build_params(self.get_bank, locals()))
+
     async def get_bounties(self, limit: int = 100, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
         """
         Get bounties.
@@ -78,6 +89,28 @@ class Torn:
         :rtype: dict
         """
         return await self.api.request("/torn/calendar", build_params(self.get_calendar, locals()))
+
+    async def get_cards(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get casino playing cards.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return await self.api.request("/torn/cards", build_params(self.get_cards, locals()))
+
+    async def get_cityshops(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get city shops stock information.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return await self.api.request("/torn/cityshops", build_params(self.get_cityshops, locals()))
 
     async def get_companies(self, timestamp: int = None, comment: str = None) -> dict:
         """
@@ -322,6 +355,17 @@ class Torn:
         :rtype: dict
         """
         return await self.api.request("/torn/organizedcrimes", build_params(self.get_organizedcrimes, locals()))
+
+    async def get_pokertables(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get active poker tables.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return await self.api.request("/torn/pokertables", build_params(self.get_pokertables, locals()))
 
     async def get_properties(self, timestamp: int = None, comment: str = None) -> dict:
         """
