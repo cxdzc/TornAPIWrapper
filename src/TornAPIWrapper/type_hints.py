@@ -40,6 +40,7 @@ FacScopeCatOptions = Literal["all", "current"]
 FacWarChainsCatOptions = Literal["active", "complete"]
 FacCrimesFiltersOptions = Literal["created_at", "executed_at", "ready_at", "expired_at"]
 FacCrimesCatOptions = Literal["all", "recruiting", "planning", "failure", "successful", "expired", "available", "completed"]
+FacInventoryCatOptions = Literal["weapons", "armor", "temporary", "medical", "consumables", "drugs", "boosters", "utilities", "loot"]
 FacNewsCatOptions = Literal["main", "attack", "armoryDeposit", "armoryAction", "territoryWar", "rankedWar", "territoryGain", "chain", "crime", "membership", "depositFunds", "giveFunds"]
 FacContributorsStatOptions = Literal["medicalitemsused", "criminaloffences", "organisedcrimerespect", "organisedcrimemoney", "organisedcrimesuccess", "organisedcrimefail", "attackswon", "attackslost", "attackschain", "attacksleave", "attacksmug", "attackshosp", "bestchain", "busts", "revives", "jails", "hosps", "medicalitemrecovery", "medicalcooldownused", "gymtrains", "gymstrength", "gymspeed", "gymenergy", "gymdefense", "gymdexterity", "candyused", "alcoholused", "energydrinkused", "drugsused", "drugoverdoses", "rehabs", "caymaninterest", "traveltimes", "traveltime", "hunting", "attacksdamagehits", "attacksdamage", "hosptimegiven", "hosptimereceived", "attacksdamaging", "attacksrunaway", "highestterritories", "territoryrespect", "membersamount", "factionage", "upgradesamount"]
 
