@@ -28,6 +28,7 @@ param_id = {
     "user_id",
 }
 param_cat = {
+    "armory_category",
     "balance_category",
     "bazaar_category",
     "car_category",
