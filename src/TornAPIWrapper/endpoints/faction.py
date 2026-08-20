@@ -28,7 +28,8 @@ from typing import TYPE_CHECKING
 
 from ..params.builders import build_params
 from ..type_hints import SortOptions, FacScopeCatOptions, AttackFiltersOptions, FacContributorsStatOptions, \
-    FacCrimesCatOptions, FacCrimesFiltersOptions, FacNewsCatOptions, ReportCatOptions, FacWarChainsCatOptions
+    FacCrimesCatOptions, FacCrimesFiltersOptions, FacNewsCatOptions, ReportCatOptions, FacWarChainsCatOptions, \
+    FacInventoryCatOptions
 
 if TYPE_CHECKING:
     from ..client import TornAPIWrapper
@@ -170,6 +171,17 @@ class Faction:
         """
         return self.api.request("/faction/contributors", build_params(self.get_contributors, locals()))
 
+    def get_crimeexp(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get your faction members crime experience.
+        API key (Minimal).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/faction/crimeexp", build_params(self.get_crimeexp, locals()))
+
     def get_crimes(self, crimes_category: FacCrimesCatOptions = "all", crimes_filter: FacCrimesFiltersOptions = None, limit: int = 20, offset: int = 0, sort: SortOptions = "DESC", to: int = None, from_: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your faction's organized crimes.
@@ -229,6 +241,21 @@ class Faction:
         :rtype: dict
         """
         return self.api.request("/faction/hof", build_params(self.get_hof, locals()))
+
+    def get_inventory(self, armory_category: FacInventoryCatOptions, limit: int = 20, offset: int = 0, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get your faction's inventory items.
+        API key (Limited).
+        Cached selection (1 hour, all items cached at once).
+        :param armory_category: Armory category.
+        :param limit: Number of results to return.
+        :param offset: Number of rows to skip before returning results.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/faction/inventory", build_params(self.get_inventory, locals()))
 
     def get_members(self, faction_id: int = None, striptags: bool = True, timestamp: int = None, comment: str = None) -> dict:
         """
