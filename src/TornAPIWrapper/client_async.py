@@ -35,7 +35,6 @@ from .endpoints_async.racing import Racing
 from .endpoints_async.torn import Torn
 from .endpoints_async.user import User
 from .errors import TornAPIErrorHandler
-from .text_response_endpoints import text_response_endpoints
 
 
 class TornAPIWrapperAsync:
@@ -77,7 +76,7 @@ class TornAPIWrapperAsync:
         """
         async with self.session.get(url=f"{self.BASE_URL}{endpoint}", params=params) as api_request:
             api_request.raise_for_status()
-            if endpoint in text_response_endpoints:
+            if api_request.headers.get("Content-Type", None) == "text/csv":
                 return await api_request.text()
             api_request_json = await api_request.json()
         api_request_error = api_request_json.get("error")

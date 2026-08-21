@@ -35,7 +35,6 @@ from .endpoints.racing import Racing
 from .endpoints.torn import Torn
 from .endpoints.user import User
 from .errors import TornAPIErrorHandler
-from .text_response_endpoints import text_response_endpoints
 
 
 class TornAPIWrapper:
@@ -71,7 +70,7 @@ class TornAPIWrapper:
         """
         api_request = self.session.get(url=f"{self.BASE_URL}{endpoint}", params=params, timeout=self.request_timeout)
         api_request.raise_for_status()
-        if endpoint in text_response_endpoints:
+        if api_request.headers.get("Content-Type", None) == "text/csv":
             return api_request.text
         api_request_json = api_request.json()
         api_request_error = api_request_json.get("error")

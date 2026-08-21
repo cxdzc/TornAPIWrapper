@@ -26,9 +26,11 @@ __author__ = "cxdzc"
 __copyright__ = "Copyright 2023-Present cxdzc"
 __license__ = "MIT"
 __title__ = "TornAPIWrapper"
-__version__ = "2.16.0"
-__patch__ = "20.08.2026"
+__version__ = "2.17.0"
+__patch__ = "21.08.2026"
 
+from .client import TornAPIWrapper
+from .client_async import TornAPIWrapperAsync
 from .errors import (
     WrapperError,
     UnhandledAPIError,
@@ -63,9 +65,8 @@ from .errors import (
     MigrationRequiredOC2,
     InvalidLogId,
     InvalidInteractionLogCategory,
+    FileDoesNotExist,
 )
-from .client import TornAPIWrapper
-from .client_async import TornAPIWrapperAsync
 
 __all__ = [
     "TornAPIWrapper",
@@ -105,4 +106,5 @@ __all__ = [
     "MigrationRequiredOC2",
     "InvalidLogId",
     "InvalidInteractionLogCategory",
+    "FileDoesNotExist",
 ]
