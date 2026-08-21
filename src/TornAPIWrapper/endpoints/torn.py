@@ -247,11 +247,11 @@ class Torn:
         """
         return self.api.request("/torn/itemammo", build_params(self.get_itemammo, locals()))
 
-    def get_itemdetails(self, item_id: int, timestamp: int = None, comment: str = None) -> dict:
+    def get_itemdetails(self, item_ids: list[int], timestamp: int = None, comment: str = None) -> dict:
         """
-        Get information about a specific item.
+        Get details for specific item(s).
         API key (Public).
-        :param item_id: Item uid.
+        :param item_ids: Item uid or a list of item uids (comma separated), 25 uids maximum.
         :param timestamp: Timestamp to bypass cache.
         :param comment: Comment for your tool/service/bot/website to be visible in the logs.
         :return: API response data.
@@ -269,6 +269,18 @@ class Torn:
         :rtype: dict
         """
         return self.api.request("/torn/itemmods", build_params(self.get_itemmods, locals()))
+
+    def get_itemstats(self, item_ids: list[int], timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get specific item(s) stats.
+        API key (Public).
+        :param item_ids: Item uid or a list of item uids (comma separated), 25 uids maximum.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/torn/itemstats", build_params(self.get_itemstats, locals()))
 
     def get_items(self, item_ids: list[int] = None, item_category: TornItemsCatOptions = None, sort: SortOptions = "ASC", timestamp: int = None, comment: str = None) -> dict:
         """
@@ -378,6 +390,17 @@ class Torn:
         """
         return self.api.request("/torn/properties", build_params(self.get_properties, locals()))
 
+    def get_rockpaperscissors(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get rock paper scissors competition stats.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/torn/rockpaperscissors", build_params(self.get_rockpaperscissors, locals()))
+
     def get_searchforcash(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get search for cash crime statuses.
@@ -399,6 +422,17 @@ class Torn:
         :rtype: dict
         """
         return self.api.request("/torn/shoplifting", build_params(self.get_shoplifting, locals()))
+
+    def get_stats(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get daily city stats.
+        API key (Public).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/torn/stats", build_params(self.get_stats, locals()))
 
     def get_stocks(self, stock_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """

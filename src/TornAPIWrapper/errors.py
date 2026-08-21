@@ -260,7 +260,6 @@ class MigrationRequiredOC2(APIError):
     """
     pass
 
-
 class InvalidLogId(APIError):
     """
     28
@@ -268,11 +267,17 @@ class InvalidLogId(APIError):
     """
     pass
 
-
 class InvalidInteractionLogCategory(APIError):
     """
     29
     Category selection is not available for interaction logs.
+    """
+    pass
+
+class FileDoesNotExist(APIError):
+    """
+    30
+    File does not exist.
     """
     pass
 
@@ -311,6 +316,7 @@ class TornAPIErrorHandler:
         27: (MigrationRequiredOC2, "Must be migrated to organized crimes 2.0."),
         28: (InvalidLogId, "Incorrect log ID."),
         29: (InvalidInteractionLogCategory, "Category selection is not available for interaction logs."),
+        30: (FileDoesNotExist, "File does not exist."),
     }
 
     def raise_code(self, error_code: int):
