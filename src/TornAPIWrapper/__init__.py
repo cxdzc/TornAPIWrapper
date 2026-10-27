@@ -26,8 +26,8 @@ __author__ = "cxdzc"
 __copyright__ = "Copyright 2023-Present cxdzc"
 __license__ = "MIT"
 __title__ = "TornAPIWrapper"
-__version__ = "2.17.0"
-__patch__ = "21.08.2026"
+__version__ = "2.18.0"
+__patch__ = "27.10.2026"
 
 from .client import TornAPIWrapper
 from .client_async import TornAPIWrapperAsync

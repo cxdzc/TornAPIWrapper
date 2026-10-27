@@ -207,6 +207,18 @@ class Torn:
         """
         return self.api.request("/torn/gyms", build_params(self.get_gyms, locals()))
 
+    def get_halloween(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get Halloween basket upgrades.
+        API key (Minimal).
+        Returns the list of available Halloween basket upgrades with their benefits, treats cost and unlock requirement.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return self.api.request("/torn/halloween", build_params(self.get_halloween, locals()))
+
     def get_honors(self, honor_ids: list[int] = None, limit: int = 20, offset: int = 0, sort: SortOptions = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get all honors or specific honors.
