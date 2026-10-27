@@ -350,6 +350,18 @@ class User:
         """
         return await self.api.request("/user/gym", build_params(self.get_gym, locals()))
 
+    async def get_halloween(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get your Halloween treats information.
+        API key (Minimal).
+        Returns your current and cumulative treats and the IDs of basket upgrades you have unlocked.
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return await self.api.request("/user/halloween", build_params(self.get_gym, locals()))
+
     async def get_hof(self, user_id: int = None, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your hall of fame rankings or for a specific player.
