@@ -894,6 +894,17 @@ class User:
         """
         return await self.api.request("/user/travel", build_params(self.get_travel, locals()))
 
+    async def get_travelinventory(self, timestamp: int = None, comment: str = None) -> dict:
+        """
+        Get your travel inventory capacity.
+        API key (Limited).
+        :param timestamp: Timestamp to bypass cache.
+        :param comment: Comment for your tool/service/bot/website to be visible in the logs.
+        :return: API response data.
+        :rtype: dict
+        """
+        return await self.api.request("/user/travelinventory", build_params(self.get_travelinventory, locals()))
+
     async def get_virus(self, timestamp: int = None, comment: str = None) -> dict:
         """
         Get your virus information.
