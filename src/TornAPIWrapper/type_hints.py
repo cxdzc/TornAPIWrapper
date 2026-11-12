@@ -25,7 +25,7 @@ DEALINGS IN THE SOFTWARE.
 from typing import Literal
 
 SortOptions = Literal["DESC", "ASC"]
-RaceCatOptions = Literal["official", "custom"]
+RaceCatOptions = Literal["official", "custom", "available"]
 AttackFiltersOptions = Literal["incoming", "outgoing", "idFilter"]
 ReportCatOptions = Literal["mostwanted", "money", "stats", "references", "friendorfoe", "companyfinancials", "truelevel", "stockanalysis", "anonymousbounties", "investment"]
 
